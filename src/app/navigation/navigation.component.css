@@ -1,0 +1,20 @@
+.main-content {
+  display: grid;
+  grid-template: 1fr / 1fr;
+}
+
+
+.userDetails {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  justify-self: start;
+  align-self: start;
+}
+
+.menu {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  justify-self: end;
+  width: 118px;
+  background-color: purple;
+}

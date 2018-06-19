@@ -1,0 +1,22 @@
+<div class="main-content">
+  <mat-menu #appMenu="matMenu" class="menu" [overlapTrigger]="false">
+    <button mat-menu-item>My Account</button>
+    <button mat-menu-item>About us</button>
+    <button mat-menu-item>Contact</button>
+    <button mat-menu-item>Help</button>
+    <button mat-menu-item>Log off {{user.name}}</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="appMenu" class="menu">
+    <p>Menu</p>
+  </button>
+
+  <div class="userDetails">
+    <span *ngIf="userConnected; else notConnected">
+      Welcome {{ user.name }}
+    </span>
+    <ng-template #notConnected>
+      <p>Please login</p>
+    </ng-template>
+  </div>
+</div>
