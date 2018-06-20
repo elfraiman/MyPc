@@ -1,0 +1,25 @@
+.main-content {
+  display: grid;
+  grid-template: auto/auto;
+}
+h5 {
+  grid-row: 1/2;
+  justify-self: center;
+  font-size: 16px;
+}
+
+.email {
+  grid-row: 2/3;
+  justify-self: center;
+}
+
+.password {
+  grid-row: 4/5;
+  justify-self: center;
+}
+
+button {
+  grid-row: 5/6;
+  width: 120px;
+  justify-self: center;
+}

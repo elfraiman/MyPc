@@ -1,10 +1,11 @@
 <div class="main-content">
+  <a href="#"><h2 class="title">LifeSaver</h2></a>
   <mat-menu #appMenu="matMenu" class="menu" [overlapTrigger]="false">
     <button mat-menu-item>My Account</button>
     <button mat-menu-item>About us</button>
     <button mat-menu-item>Contact</button>
     <button mat-menu-item>Help</button>
-    <button mat-menu-item>Log off {{user.name}}</button>
+    <button mat-menu-item>Log off {{ user.name }}</button>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="appMenu" class="menu">

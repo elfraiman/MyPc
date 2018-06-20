@@ -11,7 +11,7 @@ export class NavigationComponent implements OnInit {
     email: 'elfraiman@gmail.com'
   }
 
-  userConnected: boolean = false;
+  userConnected: boolean = true;
 
   constructor() { }
 

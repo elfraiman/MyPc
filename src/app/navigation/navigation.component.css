@@ -1,20 +1,35 @@
 .main-content {
   display: grid;
-  grid-template: 1fr / 1fr;
+  grid-template: 1fr / 1fr 1fr 120px;
+  background-color: #6200ea;
+  font-family: 'Roboto';
+  color: white;
 }
-
-
-.userDetails {
+a {
+  text-decoration: none;
+  outline: none;
+  color: white;
+}
+.title {
   grid-row: 1/2;
   grid-column: 1/2;
   justify-self: start;
-  align-self: start;
+  margin-left: 5%;
+}
+
+.userDetails {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  justify-self: end;
+  align-self: center;
 }
 
 .menu {
   grid-row: 1/2;
-  grid-column: 1/2;
+  grid-column: 3/4;
   justify-self: end;
   width: 118px;
-  background-color: purple;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  font-size: 16px;
 }
