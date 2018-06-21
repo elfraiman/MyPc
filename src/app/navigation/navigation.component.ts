@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-   user: object = {
+   public user: object = {
     name: 'Elan',
     email: 'elfraiman@gmail.com'
   }
@@ -18,4 +18,7 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
   }
 
+  disconnectUser() {
+    this.userConnected = false;
+  }
 }

@@ -1,14 +1,11 @@
 .main-content {
   display: grid;
   grid-template: 1fr / 1fr 1fr 120px;
-  background-color: #6200ea;
   font-family: 'Roboto';
-  color: white;
 }
 a {
   text-decoration: none;
   outline: none;
-  color: white;
 }
 .title {
   grid-row: 1/2;
@@ -29,7 +26,7 @@ a {
   grid-column: 3/4;
   justify-self: end;
   width: 118px;
+  height: 100%;
   background-color: transparent;
-  border-bottom: 1px solid white;
   font-size: 16px;
 }

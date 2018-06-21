@@ -5,7 +5,10 @@
     <button mat-menu-item>About us</button>
     <button mat-menu-item>Contact</button>
     <button mat-menu-item>Help</button>
-    <button mat-menu-item>Log off {{ user.name }}</button>
+    <button mat-menu-item (click)="disconnectUser()" *ngIf="userConnected; else notLoggedIn">Log off {{ user.name }}</button>
+    <ng-template #notLoggedIn>
+      <button mat-menu-item routerLink="signup">Sign-up</button>
+    </ng-template>
   </mat-menu>
 
   <button mat-button [matMenuTriggerFor]="appMenu" class="menu">
@@ -17,7 +20,7 @@
       Welcome {{ user.name }}
     </span>
     <ng-template #notConnected>
-      <p>Please login</p>
+      <p>Please <a routerLink="login">login</a> or <a routerLink="signup">sign-up</a></p>
     </ng-template>
   </div>
 </div>

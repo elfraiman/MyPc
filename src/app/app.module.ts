@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Router, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -46,6 +47,8 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { HeaderMainComponent } from './homepage/header-main/header-main.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 
 const routes: Routes = [
@@ -56,6 +59,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: '',
+    component: HomepageComponent
   }
 ];
 
@@ -64,7 +71,9 @@ const routes: Routes = [
     AppComponent,
     NavigationComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    HeaderMainComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
@@ -107,6 +116,7 @@ const routes: Routes = [
     MatTooltipModule,
     MatTreeModule,
     RouterModule.forRoot(routes),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
