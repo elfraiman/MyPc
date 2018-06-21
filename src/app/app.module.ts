@@ -49,6 +49,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HeaderMainComponent } from './homepage/header-main/header-main.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { FooterMainComponent } from './homepage/footer-main/footer-main.component';
 
 
 const routes: Routes = [
@@ -73,7 +74,8 @@ const routes: Routes = [
     LoginComponent,
     SignupComponent,
     HeaderMainComponent,
-    HomepageComponent
+    HomepageComponent,
+    FooterMainComponent
   ],
   imports: [
     BrowserModule,

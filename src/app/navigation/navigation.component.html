@@ -1,5 +1,4 @@
 <div class="main-content">
-  <a href="#"><h2 class="title">LifeSaver</h2></a>
   <mat-menu #appMenu="matMenu" class="menu" [overlapTrigger]="false">
     <button mat-menu-item>My Account</button>
     <button mat-menu-item>About us</button>
@@ -14,6 +13,23 @@
   <button mat-button [matMenuTriggerFor]="appMenu" class="menu">
     <p>Menu</p>
   </button>
+
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+  </ul>
+
+
 
   <div class="userDetails">
     <span *ngIf="userConnected; else notConnected">
