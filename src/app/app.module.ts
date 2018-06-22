@@ -50,6 +50,7 @@ import { SignupComponent } from './signup/signup.component';
 import { HeaderMainComponent } from './homepage/header-main/header-main.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FooterMainComponent } from './homepage/footer-main/footer-main.component';
+import { BodyMainComponent } from './homepage/body-main/body-main.component';
 
 
 const routes: Routes = [
@@ -75,7 +76,8 @@ const routes: Routes = [
     SignupComponent,
     HeaderMainComponent,
     HomepageComponent,
-    FooterMainComponent
+    FooterMainComponent,
+    BodyMainComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+.main-content {
+  display: grid;
+  grid-template: 1fr 2fr 1fr / auto 1fr;
+  font-family: 'Lato';
+}
+
+.title {
+  grid-row: 1/2;
+  grid-column: 1/5;
+  margin-top: 5%;
+  align-self: end;
+  text-align: center;
+}
