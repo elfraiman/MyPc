@@ -37,7 +37,18 @@
       <p style="margin-top: 5%; font-size: 17px;">Welcome {{ user.name }}</p>
     </span>
     <ng-template #notConnected>
-      <p style="margin-top: 5%; font-size: 17px;">Please <a routerLink="login">login</a> or <a routerLink="signup">sign-up</a></p>
+      <button
+        mat-button
+        routerLink="login"
+        class="login-button">
+        Login
+      </button>
+      <button
+        mat-button
+        routerLink="signup"
+        class="signup-button">
+        Signup
+      </button>
     </ng-template>
   </div>
 </div>

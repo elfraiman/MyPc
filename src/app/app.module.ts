@@ -51,6 +51,7 @@ import { HeaderMainComponent } from './homepage/header-main/header-main.componen
 import { HomepageComponent } from './homepage/homepage.component';
 import { FooterMainComponent } from './homepage/footer-main/footer-main.component';
 import { BodyMainComponent } from './homepage/body-main/body-main.component';
+import { UnderMainComponentComponent } from './homepage/body-main/under-main-component/under-main-component.component';
 
 
 const routes: Routes = [
@@ -77,7 +78,8 @@ const routes: Routes = [
     HeaderMainComponent,
     HomepageComponent,
     FooterMainComponent,
-    BodyMainComponent
+    BodyMainComponent,
+    UnderMainComponentComponent
   ],
   imports: [
     BrowserModule,
