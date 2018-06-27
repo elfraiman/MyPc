@@ -72,6 +72,8 @@
   padding: 10px 10px;
   width: 150px;
   transition: background-color 0.8s, border 1.0s, color 0.4s;
+  -webkit-transition: background-color 0.8s, border 1.0s, color 0.4s;
+  -moz-transition: background-color 0.8s, border 1.0s, color 0.4s;
 }
 
 #sign-up-btn:hover {

@@ -1,20 +1,22 @@
 .main-content {
   font-family: 'Lato', 'Roboto', Arial, Helvetica, sans-serif;;
-  margin-top: 8%;
-  background-color: rgb(36, 36, 36);
   height: 630px;
-  color: #7019eb;
   display: grid;
   grid-template: auto/auto;
-  border-top-right-radius: 350px;
-  border-top-left-radius: 350px;
+  background: linear-gradient(187deg, #1709FF, rgb(43, 43, 43));
+  background-size: 400% 400%;
+  -webkit-animation: background 15s ease infinite;
+  -moz-animation: background 15s ease infinite;
+  animation: background 15s ease infinite;
 }
 
 .title {
+  font-family: 'Ubuntu', sans-serif;
   display: flex;
   justify-content: center;
   font-weight: 800;
-  letter-spacing: 0.7rem;
+  font-size: 45px;
+  letter-spacing: 0.5rem;
   padding-top: 5%;
 }
 
@@ -53,4 +55,22 @@
   border-radius: 5px;
   background-color: #6200ea;
   color: white;
+}
+
+
+
+@-webkit-keyframes background {
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
+}
+@-moz-keyframes background {
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
+}
+@keyframes background {
+  0%{background-position:49% 0%}
+  50%{background-position:52% 100%}
+  100%{background-position:49% 0%}
 }
