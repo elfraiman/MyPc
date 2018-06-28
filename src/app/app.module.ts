@@ -52,6 +52,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { FooterMainComponent } from './homepage/footer-main/footer-main.component';
 import { BodyMainComponent } from './homepage/body-main/body-main.component';
 import { UnderMainComponentComponent } from './homepage/body-main/under-main-component/under-main-component.component';
+import { BorderNavDirective } from './directives/border-nav.directive';
 
 
 const routes: Routes = [
@@ -66,6 +67,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomepageComponent
+  },
+  {
+    path: 'home',
+    component: HomepageComponent
   }
 ];
 
@@ -79,7 +84,8 @@ const routes: Routes = [
     HomepageComponent,
     FooterMainComponent,
     BodyMainComponent,
-    UnderMainComponentComponent
+    UnderMainComponentComponent,
+    BorderNavDirective
   ],
   imports: [
     BrowserModule,

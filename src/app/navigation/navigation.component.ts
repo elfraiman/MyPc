@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
@@ -6,14 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-   public user: object = {
+
+  public user: object = {
     name: 'Elan',
     email: 'elfraiman@gmail.com'
   }
 
   userConnected: boolean = true;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
   }
@@ -21,4 +23,5 @@ export class NavigationComponent implements OnInit {
   disconnectUser() {
     this.userConnected = false;
   }
+
 }

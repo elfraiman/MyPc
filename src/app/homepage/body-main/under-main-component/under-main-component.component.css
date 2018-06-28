@@ -11,6 +11,13 @@
   justify-content: center;
   font-weight: 800;
   font-size: 45px;
-  letter-spacing: 0.5rem;
   padding-top: 5%;
+  z-index: 1;
+}
+
+img {
+  width: 100%;
+  justify-self: center;
+  height: 78%;
+  position: absolute;
 }
