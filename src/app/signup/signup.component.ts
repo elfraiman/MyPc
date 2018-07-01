@@ -8,7 +8,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
-  hide = true;
+  hide: boolean = true;
   constructor() { }
 
   ngOnInit() {
