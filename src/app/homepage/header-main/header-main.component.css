@@ -7,11 +7,10 @@
 
 #DONT-LOSE-IT {
   grid-row: 1/2;
-  grid-column: 2/4;
+  grid-column: 1/5;
   justify-self: center;
   align-self: center;
   width:100%;
-  contain: content;
   text-align: center;
   font-size: 105px;
   font-weight: 800;
@@ -21,7 +20,7 @@
 #paragraph {
   grid-row: 2/3;
   grid-column: 2/4;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   align-self: center;
   justify-self: center;

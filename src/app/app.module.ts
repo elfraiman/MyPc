@@ -53,6 +53,7 @@ import { FooterMainComponent } from './homepage/footer-main/footer-main.componen
 import { BodyMainComponent } from './homepage/body-main/body-main.component';
 import { UnderMainComponentComponent } from './homepage/body-main/under-main-component/under-main-component.component';
 import { BorderNavDirective } from './directives/border-nav.directive';
+import { InstallationGuideComponent } from './installation-guide/installation-guide.component';
 
 
 const routes: Routes = [
@@ -85,7 +86,8 @@ const routes: Routes = [
     FooterMainComponent,
     BodyMainComponent,
     UnderMainComponentComponent,
-    BorderNavDirective
+    BorderNavDirective,
+    InstallationGuideComponent
   ],
   imports: [
     BrowserModule,
