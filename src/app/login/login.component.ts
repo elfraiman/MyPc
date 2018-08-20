@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { AngularFireAuth } from '../../../node_modules/angularfire2/auth';
+import { Observable } from '../../../node_modules/rxjs';
+import * as firebase from 'firebase/app';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,10 +11,20 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
-  hide: boolean = true;
-  constructor() { }
+  hide = true;
+  private user: Observable<firebase.User>;
+
+  constructor(private _firebaseAuth: AngularFireAuth) {
+    this.user = _firebaseAuth.authState;
+  }
 
   ngOnInit() {
+  }
+
+  signInWithGoogle() {
+    return this._firebaseAuth.auth.signInWithPopup(
+      new firebase.auth.GoogleAuthProvider()
+    );
   }
 
   getErrorMessage() {

@@ -1,3 +1,4 @@
+import { InstallationGuideComponent } from './installation-guide/installation-guide.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Router, Routes } from '@angular/router';
@@ -51,10 +52,14 @@ import { HeaderMainComponent } from './homepage/header-main/header-main.componen
 import { HomepageComponent } from './homepage/homepage.component';
 import { FooterMainComponent } from './homepage/footer-main/footer-main.component';
 import { BodyMainComponent } from './homepage/body-main/body-main.component';
-import { UnderMainComponentComponent } from './homepage/body-main/under-main-component/under-main-component.component';
 import { BorderNavDirective } from './directives/border-nav.directive';
-import { InstallationGuideComponent } from './installation-guide/installation-guide.component';
-
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from './services/auth.service';
+import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 
 const routes: Routes = [
   {
@@ -72,6 +77,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomepageComponent
+  },
+  {
+    path: 'installation',
+    component: InstallationGuideComponent
   }
 ];
 
@@ -85,7 +94,6 @@ const routes: Routes = [
     HomepageComponent,
     FooterMainComponent,
     BodyMainComponent,
-    UnderMainComponentComponent,
     BorderNavDirective,
     InstallationGuideComponent
   ],
@@ -131,8 +139,13 @@ const routes: Routes = [
     MatTreeModule,
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    NgbModule.forRoot(),
+    AnimateOnScrollModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
