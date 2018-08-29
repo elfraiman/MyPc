@@ -12,6 +12,9 @@ export class AuthService {
 
   private userDetails: firebase.User = null;
 
+  private authState: firebase.auth.EmailAuthProvider = null;
+
+
   constructor(private _firebaseAuth: AngularFireAuth, private router: Router) {
     this.user = _firebaseAuth.authState;
     this.user.subscribe(

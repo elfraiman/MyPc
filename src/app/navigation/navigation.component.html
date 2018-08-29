@@ -16,12 +16,13 @@
       </a>
       <a class="nav-item nav-link" routerLink="installation">Installation</a>
       <a class="nav-item nav-link" href="#">Pricing</a>
-      <a class="nav-item nav-link" href="#">FAQ</a>
+      <a class="nav-item nav-link" href="#">Backup</a>
     </div>
   </div>
   <div class="navbar-nav justify-content-right" id="user-actions">
-    <button id="sign-in-btn" routerLink="../login">Sign in</button>
-    <button id="sign-up-btn" routerLink="../signup">GET STARTED</button>
+    <button *ngIf="!(user | async) " id="sign-in-btn" routerLink="../login">Sign in</button>
+    <button *ngIf="user | async" id="sign-in-btn" (click)="logout()">Logout</button>
+    <button *ngIf="!(user | async)" id="sign-up-btn" routerLink="../signup">GET STARTED</button>
   </div>
 </nav>
 

@@ -1,6 +1,6 @@
 <app-navigation class="nav"></app-navigation>
 <div class="main-content">
-  <h3>Please log-in</h3>
+  <h3 *ngIf="!user">Please log-in</h3>
   <p class="email">
       <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
