@@ -1,4 +1,4 @@
-import { InstallationGuideComponent } from './installation-guide/installation-guide.component';
+import { InstallationGuideComponent } from './pages/installation-guide/installation-guide.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Router, Routes } from '@angular/router';
@@ -46,12 +46,12 @@ import {
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { HeaderMainComponent } from './homepage/header-main/header-main.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { FooterMainComponent } from './homepage/footer-main/footer-main.component';
-import { BodyMainComponent } from './homepage/body-main/body-main.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { HeaderMainComponent } from './pages/homepage/header-main/header-main.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { FooterMainComponent } from './pages/homepage/footer-main/footer-main.component';
+import { BodyMainComponent } from './pages/homepage/body-main/body-main.component';
 import { BorderNavDirective } from './directives/border-nav.directive';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -60,6 +60,7 @@ import { environment } from '../environments/environment';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from './services/auth.service';
 import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
+import { ControlPanelComponent } from './pages/control-panel/control-panel.component';
 
 const routes: Routes = [
   {
@@ -81,6 +82,10 @@ const routes: Routes = [
   {
     path: 'installation',
     component: InstallationGuideComponent
+  },
+  {
+    path: 'control-panel',
+    component: ControlPanelComponent
   }
 ];
 
@@ -95,7 +100,8 @@ const routes: Routes = [
     FooterMainComponent,
     BodyMainComponent,
     BorderNavDirective,
-    InstallationGuideComponent
+    InstallationGuideComponent,
+    ControlPanelComponent
   ],
   imports: [
     BrowserModule,

@@ -26,7 +26,7 @@ export class NavigationComponent implements OnInit {
 
   logout() {
     this._firebaseAuth.auth.signOut()
-      .then((res) => this.router.navigate(['/']));
+      .then((res) => this.router.navigate(['']));
       console.log('log out', this.user);
   }
 }

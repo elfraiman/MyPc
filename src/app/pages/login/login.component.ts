@@ -3,9 +3,9 @@ import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 import { filter } from 'rxjs/operators';
-import { AngularFireAuth } from '../../../node_modules/angularfire2/auth';
-import { Observable } from '../../../node_modules/rxjs';
-import { AuthService } from './../services/auth.service';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs';
+import { AuthService } from './../../services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

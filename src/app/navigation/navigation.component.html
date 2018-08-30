@@ -23,6 +23,7 @@
     <button *ngIf="!(user | async) " id="sign-in-btn" routerLink="../login">Sign in</button>
     <button *ngIf="user | async" id="sign-in-btn" (click)="logout()">Logout</button>
     <button *ngIf="!(user | async)" id="sign-up-btn" routerLink="../signup">GET STARTED</button>
+    <button *ngIf="(user | async)" id="sign-up-btn" routerLink="../control-panel">Control Panel</button>
   </div>
 </nav>
 
