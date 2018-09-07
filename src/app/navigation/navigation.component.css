@@ -2,12 +2,13 @@
   height: 80px;
   padding: 0px 0px;
   margin: 0px;
-  position: relative;
+  position: fixed;
 }
 
 #navbarNavAltMarkup {
   margin-left: 8%;
 }
+
 .navbar-nav a {
   padding: 5px;
   letter-spacing: 0.1rem;
@@ -31,7 +32,8 @@
 #brand {
   position: absolute;
   left: 50%;
-  margin-left: -50px !important;  /* 50% of your logo width */
+  margin-left: -50px !important;
+  /* 50% of your logo width */
   display: block;
   font-size: 25px;
   font-family: 'Montserrat', sans-serif;

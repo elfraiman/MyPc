@@ -7,21 +7,21 @@
   </button>
   <a id="brand" class="navbar-brand" href="#">
     MyPc
-    <span style="color: #1709FF">.</span>
+    <span style="color: rgb(179, 32, 224)">.</span>
   </a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav justify-content-center">
       <a class="nav-item nav-link active" href="#">Home
         <span class="sr-only">(current)</span>
       </a>
-      <a class="nav-item nav-link" routerLink="installation">Installation</a>
+      <a class="nav-item nav-link" routerLink="../installation">Installation</a>
       <a class="nav-item nav-link" href="#">Pricing</a>
       <a class="nav-item nav-link" href="#">Backup</a>
     </div>
   </div>
   <div class="navbar-nav justify-content-right" id="user-actions">
     <button *ngIf="!(user | async) " id="sign-in-btn" routerLink="../login">Sign in</button>
-    <button *ngIf="user | async" id="sign-in-btn" (click)="logout()">Logout</button>
+    <button *ngIf="user | async" id="sign-in-btn" (click)="authUser.logout()">Logout</button>
     <button *ngIf="!(user | async)" id="sign-up-btn" routerLink="../signup">GET STARTED</button>
     <button *ngIf="(user | async)" id="sign-up-btn" routerLink="../control-panel">Control Panel</button>
   </div>
