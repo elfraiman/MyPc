@@ -58,6 +58,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FooterMainComponent } from './components/footer-main/footer-main.component';
+import { TooltipModule, AccordionModule, CarouselModule } from 'ngx-bootstrap';
 
 const routes: Routes = [
   {
@@ -142,7 +143,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
     NgbModule.forRoot(),
-    AngularFireModule.initializeApp(environment.firebase)
+    TooltipModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AccordionModule,
+    CarouselModule
   ],
   providers: [AuthService, AngularFirestore, AngularFireAuth],
   bootstrap: [AppComponent]
