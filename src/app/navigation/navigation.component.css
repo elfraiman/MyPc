@@ -2,7 +2,7 @@
   height: 80px;
   padding: 0px 0px;
   margin: 0px;
-  position: fixed;
+  position: relative;
 }
 
 #navbarNavAltMarkup {

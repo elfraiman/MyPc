@@ -13,15 +13,15 @@ import * as firebase from 'firebase';
 export class SignupComponent implements OnInit {
   signupForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    password: ['']
+    password: ['', [Validators.required]]
   });
 
   public errorText: string;
   hide = true;
   protected user: Observable<firebase.User> = this._firebaseAuth.authState.pipe(filter(Boolean));
-  constructor(private _firebaseAuth: AngularFireAuth, private fb: FormBuilder) {}
+  constructor(private _firebaseAuth: AngularFireAuth, private fb: FormBuilder) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   doRegister() {
     const email = this.signupForm.get('email').value;

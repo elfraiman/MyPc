@@ -13,7 +13,7 @@ import { AuthService } from './../services/auth.service';
 export class NavigationComponent implements OnInit {
   protected user: Observable<firebase.User> = this._firebaseAuth.authState.pipe(filter(Boolean));
 
-  constructor(private _firebaseAuth: AngularFireAuth, private authUser: AuthService, private router: Router) {}
+  constructor(private _firebaseAuth: AngularFireAuth, public authUser: AuthService, private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
