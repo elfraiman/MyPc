@@ -2,24 +2,23 @@
 <div class="main-content">
   <h3 *ngIf="!user">Please log-in</h3>
   <p class="email">
-      <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="Enter your email" [formControl]="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Enter your email" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
   </p>
   <p class="password">
-      <mat-form-field appearance="outline">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
-          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-        </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input [formControl]="password" matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
   </p>
   <button id="login-btn" routerLink="../home">Login</button>
   <button id="google-btn" type="button" class="btn btn-block" (click)="signInWithGoogle()">
     <i class="fa fa-google" aria-hidden="true"></i>
-       Login with Google
+    Login with Google
   </button>
 </div>
-

@@ -1,7 +1,7 @@
 import { InstallationGuideComponent } from './pages/installation-guide/installation-guide.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Router, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
@@ -48,19 +48,16 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { HeaderMainComponent } from './pages/homepage/header-main/header-main.component';
-import { HomepageComponent } from './pages/homepage/homepage.component';
-import { FooterMainComponent } from './pages/homepage/footer-main/footer-main.component';
-import { BodyMainComponent } from './pages/homepage/body-main/body-main.component';
 import { BorderNavDirective } from './directives/border-nav.directive';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from './services/auth.service';
-import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 import { ControlPanelComponent } from './pages/control-panel/control-panel.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { FooterMainComponent } from './components/footer-main/footer-main.component';
 
 const routes: Routes = [
   {
@@ -73,11 +70,11 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: HomepageComponent
+    component: HomePageComponent
   },
   {
     path: 'home',
-    component: HomepageComponent
+    component: HomePageComponent
   },
   {
     path: 'installation',
@@ -95,13 +92,12 @@ const routes: Routes = [
     NavigationComponent,
     LoginComponent,
     SignupComponent,
-    HeaderMainComponent,
-    HomepageComponent,
+    HomePageComponent,
     FooterMainComponent,
-    BodyMainComponent,
     BorderNavDirective,
     InstallationGuideComponent,
-    ControlPanelComponent
+    ControlPanelComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -145,13 +141,10 @@ const routes: Routes = [
     MatTreeModule,
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
     NgbModule.forRoot(),
-    AnimateOnScrollModule.forRoot()
+    AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [AuthService],
+  providers: [AuthService, AngularFirestore, AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

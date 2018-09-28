@@ -1,9 +1,6 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { Observable } from 'rxjs';
-import { filter } from 'rxjs/operators';
-import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-signup',
@@ -18,30 +15,12 @@ export class SignupComponent implements OnInit {
 
   public errorText: string;
   hide = true;
-  protected user: Observable<firebase.User> = this._firebaseAuth.authState.pipe(filter(Boolean));
-  constructor(private _firebaseAuth: AngularFireAuth, private fb: FormBuilder) { }
+  constructor(private auth: AuthService, private fb: FormBuilder) { }
 
   ngOnInit() { }
 
   doRegister() {
-    const email = this.signupForm.get('email').value;
-    const password = this.signupForm.get('password').value;
-
-    console.log(this.signupForm.get('email').value, 'form value email');
-    return new Promise<any>((resolve, reject) => {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(email, password)
-        .then(
-          res => {
-            resolve(res);
-            console.log(res, 'resolved');
-          },
-          err => {
-            reject(err), (this.errorText = err);
-          }
-        );
-    });
+    this.auth.signupWithEmail(this.signupForm.get('email').value, this.signupForm.get('password').value);
   }
   getErrorMessage() {
     return this.signupForm.get('email').hasError('required')
