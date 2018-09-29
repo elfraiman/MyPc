@@ -43,7 +43,7 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
-
+import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -59,7 +59,6 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FooterMainComponent } from './components/footer-main/footer-main.component';
 import { TooltipModule, AccordionModule, CarouselModule } from 'ngx-bootstrap';
-
 const routes: Routes = [
   {
     path: 'login',
@@ -103,6 +102,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     MatButtonModule,
     MatCheckboxModule,
     MatMenuModule,

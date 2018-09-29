@@ -1,25 +1,24 @@
 <app-navigation></app-navigation>
 <div class="main-content">
-  <form [formGroup]="signupForm">
-    <h4>Signup to use our service</h4>
-    <p class="email">
-      <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Enter your email" formControlName="email" required>
-        <mat-error *ngIf="signupForm.invalid">{{getErrorMessage()}}</mat-error>
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      </mat-form-field>
-    </p>
-    <p class="password">
-      <mat-form-field appearance="outline">
-        <mat-label>Password</mat-label>
-        <input formControlName="password" matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
-          required>
-        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-      </mat-form-field>
-    </p>
-    <button id="sign-up-btn" (click)="doRegister()">Signup</button>
-    <button id="sign-in-btn" routerLink="../login">Or Sign in</button>
-    <p *ngIf="errorText" style="color: red">{{ errorText }}</p>
-  </form>
+  <h2 style="text-align: center;">Please Sign-up</h2>
+  <p class="email">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Enter your email" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </p>
+  <p class="password">
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input [formControl]="password" matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+  </p>
+  <button id="login-btn" (click)="doRegister()">Register</button>
+  <button id="google-btn" type="button" class="btn btn-block" (click)="doGoogleRegister()">
+    <i class="fa fa-google" aria-hidden="true"></i>
+    Register with Google
+  </button>
 </div>

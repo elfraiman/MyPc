@@ -1,54 +1,8 @@
-app-navigation {
-  display: block;
-  position:relative;
-  height: 80px;
+.container-fluid {
+  padding: 0px 20vw 0px 20vw;
 }
 
-.main-content {
-  display: grid;
-  grid-template-columns: 15% auto 15%;
-  grid-template-rows: repeat(4, auto);
-  align-items: center;
-}
-
-.title {
-  font-size: 40px;
-  grid-column: 2/3;
-  grid-row: 1/2;
-  margin-top: 8%;
-  text-align: center;
-}
-.main-body {
-  grid-column: 2/3;
-  grid-row: 2/3;
-  padding: 50px 0px;
-}
-
-.boot-picture {
-  grid-column: 2/3;
-  grid-row: 3/4;
-  justify-self: center;
-  align-items: center;
-  padding-bottom: 50px;
-}
-
-.under-picture-text {
-  grid-row: 4/5;
-  grid-column: 2/3;
-}
-
-.bios-pictures {
-  grid-row: 5/6;
-  grid-column: 2/3;
-  padding: 20px 20px;
-  justify-self: center;
-  align-self: center;
-}
-
-.animated {
-  visibility: visible !important;
-}
-
-.hide-on-init {
-  visibility: hidden;
+.row {
+  display: flex;
+  justify-content: center;
 }

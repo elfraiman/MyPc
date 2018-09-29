@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -18,17 +19,20 @@ export class LoginComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private router: Router,
+    private toastCtrl: ToastrService
   ) { }
 
   ngOnInit() {
   }
 
-
-  signInWithGoogle() {
-  }
-
   signInWithEmail() {
     this.auth.signInWithEmail(this.email.value, this.password.value);
+  }
+
+  signInWithGoogle() {
+    this.auth.googleLogin().then(promise => {
+      this.router.navigate(['home']);
+    }).catch(error => this.toastCtrl.error(error));
   }
 
   getErrorMessage() {

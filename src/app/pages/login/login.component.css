@@ -16,12 +16,12 @@ h3 {
 }
 
 .password {
-  grid-row: 4/5;
+  grid-row: 3/4;
   justify-self: center;
 }
 
 #login-btn {
-  grid-row: 5/6;
+  grid-row: 6/7;
   justify-self: center;
   background-color: rgb(36, 36, 36);
   color: white;
@@ -31,6 +31,7 @@ h3 {
   padding: 8px 8px;
   width: 120px;
   height: 40px;
+  margin: 0px 10px 0px 10px;
   transition: background-color 0.8s, border 1.0s, color 0.4s;
   -webkit-transition: background-color 0.8s, border 1.0s, color 0.4s;
   -moz-transition: background-color 0.8s, border 1.0s, color 0.4s;
@@ -44,7 +45,7 @@ button:hover {
 }
 
 #google-btn {
-  grid-row: 6/7;
+  grid-row: 7/8;
   justify-self: center;
   background-color: rgb(81, 192, 243);
   color: white;
