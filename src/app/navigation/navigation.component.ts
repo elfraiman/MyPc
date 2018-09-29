@@ -1,5 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import * as firebase from 'firebase';
+import { Observable } from '../../../node_modules/rxjs';
+import { filter, map } from '../../../node_modules/rxjs/operators';
+import { AuthService } from './../services/auth.service';
+import { isNullOrUndefined } from 'util';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -7,21 +12,15 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  public user: object = {
-    name: 'Elan',
-    email: 'elfraiman@gmail.com'
-  }
+  public user = this.authUser.user.pipe(
+    filter(user => !isNullOrUndefined(user)),
+    map(user => user)
+  );
 
-  userConnected: boolean = true;
-
-  constructor() {
-   }
+  constructor(public authUser: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  disconnectUser() {
-    this.userConnected = false;
-  }
 
 }

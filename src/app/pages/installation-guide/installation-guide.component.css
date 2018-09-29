@@ -1,0 +1,8 @@
+.container-fluid {
+  padding: 0px 20vw 0px 20vw;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}

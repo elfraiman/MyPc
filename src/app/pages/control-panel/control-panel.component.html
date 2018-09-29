@@ -1,0 +1,11 @@
+<app-navigation></app-navigation>
+
+<div class="main-content">
+
+</div>
+
+<h2>
+  {{ (user | async)?.displayName }}
+  {{ (user | async)?.email }}
+  {{ (user | async)?.phoneNumber }}
+</h2>

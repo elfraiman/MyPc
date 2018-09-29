@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.padding {
+  padding: 16px 16px 16px 16px;
+}
+
+.justify-content-center {
+  display: flex;
+  justify-content: center;
+}
+
+.align-items.center {
+  display: flex;
+  align-items: center;
+}
