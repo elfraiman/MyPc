@@ -61,6 +61,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FooterMainComponent } from './components/footer-main/footer-main.component';
 import { TooltipModule, AccordionModule, CarouselModule } from 'ngx-bootstrap';
 import { ContactComponent } from './pages/contact/contact.component';
+import { PricePageComponent } from './pages/price-page/price-page.component';
 const routes: Routes = [
   {
     path: 'login',
@@ -89,6 +90,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'pricing',
+    component: PricePageComponent
   }
 ];
 
@@ -104,7 +109,8 @@ const routes: Routes = [
     InstallationGuideComponent,
     ControlPanelComponent,
     HomePageComponent,
-    ContactComponent
+    ContactComponent,
+    PricePageComponent
   ],
   imports: [
     BrowserModule,
