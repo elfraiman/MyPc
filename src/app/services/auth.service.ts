@@ -61,6 +61,7 @@ export class AuthService {
         return this.afs.doc('users/' + response.user.uid).set({
           email,
           uid: response.user.email,
+          userPackage: 'free'
         } as User);
       }).catch(async error => {
         this.toastCtrl.error(error);

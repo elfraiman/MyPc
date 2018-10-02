@@ -17,12 +17,14 @@
       <a class="nav-item nav-link" routerLink="/pricing">Pricing</a>
       <a class="nav-item nav-link" routerLink="/contact">Contact</a>
     </div>
+    <!-- to:do justify-end-->
+
   </div>
-  <div class="navbar-nav justify-content-right" id="user-actions">
-    <button *ngIf="!(user | async) " id="sign-in-btn" routerLink="../login">Sign in</button>
-    <button *ngIf="user | async" id="sign-in-btn" (click)="authUser.signOut()">Logout</button>
-    <button *ngIf="!(user | async)" id="sign-up-btn" routerLink="../signup">GET STARTED</button>
-    <button *ngIf="(user | async)" id="sign-up-btn" routerLink="../control-panel">Control Panel</button>
+  <div class="navbar-nav justify-content-end collapse navbar-collapse">
+    <a *ngIf="!(user | async)" class="nav-item nav-link right-btn" routerLink="/login">Sign in</a>
+    <a *ngIf="user | async" class="nav-item nav-link right-btn" (click)="authUser.signOut()">Logout</a>
+    <a *ngIf="!(user | async)" class="nav-item nav-link right-btn" routerLink="/signup">GET STARTED</a>
+    <a *ngIf="(user | async)" class="nav-item nav-link right-btn" routerLink="/control-panel">Control Panel</a>
   </div>
 </nav>
 

@@ -18,14 +18,16 @@
   </div>
 
   <div class="row ">
-    <div class="col-sm justify-content-center">
-      <button id="login-btn" (click)="signInWithEmail()">Login</button>
-      <b style="display: flex; align-self: center;">Or</b>
-      <button id="login-btn" style="background-color: #880e4f" routerLink="/signup">Register</button>
+    <div class="col-sm justify-content-center" style="text-align: center">
+      <button class="btn btn-dark" (click)="signInWithEmail()">Login</button>
+      <b class="padding">Or</b>
+      <button class="btn btn-outline purple-btn-outline" routerLink="/signup">Register</button>
     </div>
   </div>
-  <button id="google-btn" type="button" class="btn btn-block" (click)="signInWithGoogle()">
-    <i class="fa fa-google" aria-hidden="true"></i>
-    Login with Google
-  </button>
+  <div class="row justify-content-center padding">
+    <button class="btn btn-primary" (click)="signInWithGoogle()">
+      <i class="fa fa-google" aria-hidden="true"></i>
+      Login with Google
+    </button>
+  </div>
 </div>
