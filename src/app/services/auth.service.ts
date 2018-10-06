@@ -11,9 +11,11 @@ import { ToastrService } from 'ngx-toastr';
 interface User {
   uid: string;
   email: string;
-  photoURL?: string;
-  displayName?: string;
-  favoriteColor?: string;
+  name: string;
+  lastName: string;
+  phone: number;
+  address: string;
+  userPackage: string;
 }
 
 export class EmailPasswordCredentials {
@@ -53,7 +55,7 @@ export class AuthService {
     );
   }
 
-  signupWithEmail(email: string, password: string) {
+  signupWithEmail(email: string, password: string, name: string, lastName: string, phone: number, address: string) {
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(async response => {
         this.router.navigate(['login']);
@@ -61,7 +63,11 @@ export class AuthService {
         return this.afs.doc('users/' + response.user.uid).set({
           email,
           uid: response.user.email,
-          userPackage: 'free'
+          userPackage: 'free',
+          name,
+          lastName,
+          phone,
+          address
         } as User);
       }).catch(async error => {
         this.toastCtrl.error(error);
@@ -97,14 +103,16 @@ export class AuthService {
 
   private updateUserData(user) {
     // Sets user data to firestore on login
-
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
 
     const data: User = {
       uid: user.uid,
       email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL
+      name: user.name,
+      lastName: user.lastName,
+      phone: user.phone,
+      address: user.address,
+      userPackage: user.userPackage
     };
 
     return userRef.set(data, { merge: true });

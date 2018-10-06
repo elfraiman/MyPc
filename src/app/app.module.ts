@@ -62,6 +62,7 @@ import { FooterMainComponent } from './components/footer-main/footer-main.compon
 import { TooltipModule, AccordionModule, CarouselModule } from 'ngx-bootstrap';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PricePageComponent } from './pages/price-page/price-page.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 const routes: Routes = [
   {
     path: 'login',
@@ -131,6 +132,7 @@ const routes: Routes = [
     MatCardModule,
     MatChipsModule,
     MatDatepickerModule,
+    MDBBootstrapModule.forRoot(),
     MatDialogModule,
     MatDividerModule,
     MatExpansionModule,
