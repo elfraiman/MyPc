@@ -29,7 +29,6 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.form.valueChanges.pipe(
       takeUntil(this.stop$)
     ).subscribe(formValue => {
-      console.log(formValue)
       if (formValue.email && formValue.password && formValue.name && formValue.lastName && formValue.address && formValue.phone) {
         this.registerDisabled = false;
       }
