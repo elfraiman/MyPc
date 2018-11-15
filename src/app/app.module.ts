@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -59,6 +60,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FooterMainComponent } from './components/footer-main/footer-main.component';
 import { TooltipModule, AccordionModule, CarouselModule } from 'ngx-bootstrap';
+import { ContactComponent } from './pages/contact/contact.component';
+import { PricePageComponent } from './pages/price-page/price-page.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 const routes: Routes = [
   {
     path: 'login',
@@ -83,6 +87,14 @@ const routes: Routes = [
   {
     path: 'control-panel',
     component: ControlPanelComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
+  },
+  {
+    path: 'pricing',
+    component: PricePageComponent
   }
 ];
 
@@ -97,7 +109,9 @@ const routes: Routes = [
     BorderNavDirective,
     InstallationGuideComponent,
     ControlPanelComponent,
-    HomePageComponent
+    HomePageComponent,
+    ContactComponent,
+    PricePageComponent
   ],
   imports: [
     BrowserModule,
@@ -118,6 +132,7 @@ const routes: Routes = [
     MatCardModule,
     MatChipsModule,
     MatDatepickerModule,
+    MDBBootstrapModule.forRoot(),
     MatDialogModule,
     MatDividerModule,
     MatExpansionModule,
@@ -137,6 +152,7 @@ const routes: Routes = [
     MatSortModule,
     MatStepperModule,
     MatTableModule,
+    FormsModule,
     MatTabsModule,
     MatTooltipModule,
     MatTreeModule,

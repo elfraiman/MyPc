@@ -3,6 +3,7 @@
   padding: 0px 0px;
   margin: 0px;
   position: relative;
+  box-shadow: none;
 }
 
 #navbarNavAltMarkup {
@@ -22,7 +23,7 @@
 
 .navbar-nav a:hover {
   padding-bottom: 5%;
-  border-bottom: 5px solid #1709FF;
+  border-bottom: 4px solid #FF5722;
 }
 
 #user-actions button {
@@ -44,7 +45,7 @@
 #brand:hover {
   padding-bottom: 1%;
   font-size: 28px;
-  background: -webkit-linear-gradient(#1709ff, #333);
+  background: -webkit-linear-gradient(#FF5722, #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -84,4 +85,9 @@
   background-color: inherit;
   border: 3px solid rgb(36, 36, 36);
   color: rgb(36, 36, 36);
+}
+
+.right-btn {
+  width: 150px;
+  text-align: center;
 }

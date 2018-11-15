@@ -1,5 +1,5 @@
 <app-navigation></app-navigation>
-<div class="main-content">
+<div class="main-content animated slideInUp">
   <h2 style="text-align: center;">Please log-in</h2>
   <div class="email">
     <mat-form-field appearance="outline">
@@ -18,14 +18,10 @@
   </div>
 
   <div class="row ">
-    <div class="col-sm justify-content-center">
-      <button id="login-btn" (click)="signInWithEmail()">Login</button>
-      <b style="display: flex; align-self: center;">Or</b>
-      <button id="login-btn" style="background-color: #880e4f" routerLink="/signup">Register</button>
+    <div class="col-sm justify-content-center" style="text-align: center">
+      <button class="btn btn-dark" (click)="signInWithEmail()">Login</button>
+      <b class="padding">Or</b>
+      <button mdbBtn color="primary" routerLink="/signup">Register</button>
     </div>
   </div>
-  <button id="google-btn" type="button" class="btn btn-block" (click)="signInWithGoogle()">
-    <i class="fa fa-google" aria-hidden="true"></i>
-    Login with Google
-  </button>
 </div>

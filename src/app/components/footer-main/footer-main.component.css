@@ -1,10 +1,11 @@
 .main-content {
   font-family: 'Montserrat', sans-serif;
-  background-color: #363636;
+  background-color: rgb(32, 32, 32);
   display: grid;
   grid-template: 1fr / 1fr 1fr 1fr;
-  height: 170px;
-  position: absolute;
+  height: 130px;
+  position: relative;
+  bottom: 0;
   width: 100%;
 }
 
@@ -15,6 +16,7 @@
   padding: 10px 10px;
   position: absolute;
 }
+
 .footer-title {
   text-align: center;
   font-size: 25px;

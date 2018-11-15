@@ -9,9 +9,9 @@ import { filter } from '../../../../node_modules/rxjs/operators';
   styleUrls: ['./control-panel.component.css']
 })
 export class ControlPanelComponent implements OnInit {
-  protected user: Observable<firebase.User> = this._firebaseAuth.authState.pipe(filter(Boolean));
+  public user: Observable<firebase.User> = this._firebaseAuth.authState.pipe(filter(Boolean));
 
-  constructor(private _firebaseAuth: AngularFireAuth) {}
+  constructor(private _firebaseAuth: AngularFireAuth) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
