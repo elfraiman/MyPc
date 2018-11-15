@@ -1,40 +1,31 @@
-<nav class="navbar fixed-top
-        navbar-expand-lg
-        navbar-light" id="main-nav">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a id="brand" class="navbar-brand" routerLink="/home">
-    MyPc
-  </a>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav justify-content-center">
-      <a class="nav-item nav-link active" routerLink="/home">Home
-        <span class="sr-only">(current)</span>
-      </a>
-      <a class="nav-item nav-link" routerLink="/installation">Installation</a>
-      <a class="nav-item nav-link" routerLink="/pricing">Pricing</a>
-      <a class="nav-item nav-link" routerLink="/contact">Contact</a>
-    </div>
-    <!-- to:do justify-end-->
 
-  </div>
-  <div class="navbar-nav justify-content-end collapse navbar-collapse">
-    <a *ngIf="!(user | async)" class="nav-item nav-link right-btn" routerLink="/login">Sign in</a>
-    <a *ngIf="user | async" class="nav-item nav-link right-btn" (click)="authUser.signOut()">Logout</a>
-    <a *ngIf="!(user | async)" class="nav-item nav-link right-btn" routerLink="/signup">GET STARTED</a>
-    <a *ngIf="(user | async)" class="nav-item nav-link right-btn" routerLink="/control-panel">Control Panel</a>
-  </div>
-</nav>
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light white">
+  <mdb-navbar-brand>
+      <a id="brand" class="navbar-brand" routerLink="/home">MyPc</a>
+  </mdb-navbar-brand>
+  <links>
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              <a class="nav-link waves-light" href="#" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" href="#" mdbWavesEffect routerLink="/installation">Installation</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" href="#" mdbWavesEffect routerLink="/pricing">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" href="#" mdbWavesEffect routerLink="/contact">Contact</a>
+        </li>
+      </ul>
+      <span class="navbar-text white-text">
+        <div class="navbar-nav justify-content-end">
+          <a *ngIf="!(user | async)" class="nav-item nav-link right-btn" routerLink="/login">Sign in</a>
 
-<!--DROP DOWN
-   <li class="nav-item dropdown" ngbDropdown>
-    <a class="nav-link dropdown-toggle" id="dropdown01" ngbDropdownToggle>Category</a>
-    <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
-      <a class="dropdown-item" href="#">Angular</a>
-      <a class="dropdown-item" href="#">React</a>
-      <a class="dropdown-item" href="#">Vue.js</a>
-    </div>
-  </li>
--->
+          <a *ngIf="user | async" class="nav-item nav-link right-btn" (click)="signOut()">Logout</a>
+          <a *ngIf="!(user | async)" class="nav-item nav-link right-btn" routerLink="/signup">GET STARTED</a>
+          <a *ngIf="(user | async)" class="nav-item nav-link right-btn" routerLink="/control-panel">Control Panel</a>
+        </div>
+      </span>
+  </links>
+</mdb-navbar>

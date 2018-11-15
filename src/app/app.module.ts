@@ -1,3 +1,4 @@
+import 'hammerjs';
 import { InstallationGuideComponent } from './pages/installation-guide/installation-guide.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';

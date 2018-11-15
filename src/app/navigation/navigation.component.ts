@@ -22,5 +22,10 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
   }
 
+  signOut() {
+    this.authUser.signOut();
+    this.router.navigate(['home']);
+  }
+
 
 }
