@@ -1,1 +1,17 @@
 
+mdb-card {
+  width: 300px;
+  margin-left: 10vw;
+  margin-top: 5vh;
+}
+
+.wrapper {
+  display: flex;
+}
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    justify-content: center;
+    display: inline-block;
+    margin-bottom: 25px;
+  }
+}

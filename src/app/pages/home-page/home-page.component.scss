@@ -4,24 +4,29 @@
   font-weight: 800;
   z-index: 1;
 }
+
 .wrapper {
   display: flex;
   position: relative;
-  top: 120px;
+  top: 100px;
 }
+
 .header-container {
   border-bottom: 1px solid rgba(0, 0, 0, 0.105);
   height: 75vh;
   max-width: 1300px;
+
   .col {
     align-content: center;
     justify-content: center;
   }
+
   .row {
     align-content: center;
     justify-content: center;
   }
 }
+
 
 .padding-bottom {
   padding-bottom: 16px;
@@ -71,14 +76,24 @@
   color: black;
 }
 
-
-
 @media only screen and (max-width: 600px) {
   #DONT-LOSE-IT {
     text-align: center;
-    font-size: 35px;
+    font-size: 45px;
     font-weight: 800;
     z-index: 1;
+  }
+
+  .wrapper {
+    top: 50px;
+  }
+
+  .header-container {
+    height: 60vh;
+  }
+
+  .data-safe {
+    text-align: center
   }
 
   .generation-container {

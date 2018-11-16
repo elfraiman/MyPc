@@ -29,5 +29,30 @@ body {
   margin-top: 16px;
 }
 
+.dark-bg {
+  background-color: rgb(32, 32, 32);
+}
+
+.dark-fg {
+  color: rgb(32, 32, 32);
+}
+
+.light-bg {
+  background-color: rgb(252, 252, 252);
+}
+
+.light-fg {
+  color: rgb(252, 252, 252);
+}
+
+.indigo-fg {
+  color: #9933CC;
+}
+
+.indigo-bg {
+  background-color: #9933CC;
+}
+
+
 
 $orange: #ff6f00;
