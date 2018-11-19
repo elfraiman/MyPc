@@ -64,6 +64,7 @@ import { TooltipModule, AccordionModule, CarouselModule } from 'ngx-bootstrap';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PricePageComponent } from './pages/price-page/price-page.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 const routes: Routes = [
   {
     path: 'login',
@@ -72,10 +73,6 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
-  },
-  {
-    path: '',
-    component: HomePageComponent
   },
   {
     path: 'home',
@@ -96,7 +93,12 @@ const routes: Routes = [
   {
     path: 'pricing',
     component: PricePageComponent
-  }
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

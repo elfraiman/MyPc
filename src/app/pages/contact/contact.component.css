@@ -20,9 +20,15 @@
   width: 100%;
 }
 
-.wrapper {
-  display: flex;
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
 }
+
+
 
 @media only screen and (max-width: 600px) {
   .main-grid {
@@ -42,10 +48,5 @@
 
   .bottom-div {
     grid-row: 3/4;
-  }
-  .wrapper {
-    justify-content: center;
-    display: inline-block;
-    margin-bottom: 25px;
   }
 }

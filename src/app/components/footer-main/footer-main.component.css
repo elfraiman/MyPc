@@ -10,11 +10,10 @@
   align-content: end;
 }
 
-.left-box {
+#left-box {
   grid-column: 1/2;
   justify-self: center;
   align-self: center;
-  padding: 10px 10px;
   position: absolute;
 }
 
@@ -29,15 +28,13 @@
   grid-column: 2/3;
   justify-self: center;
   align-self: center;
+  text-align: center !important;
 }
 
 #middle-list {
-  padding-top: 5px;
   list-style: none;
+  padding-left: 0px;
   color: white;
-  align-self: center;
-  font-size: 17px;
-  text-align: center;
 }
 
 #middle-list li {
@@ -64,7 +61,22 @@ mat-divider {
 
 
 @media only screen and (max-width: 600px) {
+  #left-box {
+    font-size: 15px;
+  }
+
   #middle-box #middle-list {
-    font-size: 11px;
+    font-size: 12px;
+  }
+
+  #right-box {
+    font-size: 13px;
+  }
+
+  .footer-title {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
   }
 }
