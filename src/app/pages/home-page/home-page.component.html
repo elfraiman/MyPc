@@ -12,7 +12,7 @@
     <div class="row padding-bottom">
       <button type="button" class="btn btn-primary" routerLink="/signup">Start now.</button>
     </div>
-    <video autoplay muted loop id="myVideo" #video>
+    <video onloadedmetadata="this.muted=true" playsinline autoplay muted loop id="myVideo" #video>
         <source src="../../../assets/hongkongcomp.mp4" type="video/mp4">
       </video>
   </div>

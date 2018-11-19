@@ -15,8 +15,8 @@ export class HomePageComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
 
-  async ngAfterViewInit() {
-    await this.myVideo.nativeElement.play();
+   ngAfterViewInit() {
+    this.myVideo.nativeElement.play();
   }
 
 
