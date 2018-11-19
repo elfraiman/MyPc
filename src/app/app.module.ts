@@ -96,10 +96,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: '#',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
 ];
+
 
 @NgModule({
   declarations: [
@@ -159,7 +165,7 @@ const routes: Routes = [
     MatTabsModule,
     MatTooltipModule,
     MatTreeModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {useHash: true}),
     ReactiveFormsModule,
     NgbModule.forRoot(),
     TooltipModule,
