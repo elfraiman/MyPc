@@ -1,3 +1,21 @@
 .main-content {
-  padding: 25px 20vw 25px 20vw;
+  display: grid;
+  grid-template: auto / 1fr 1fr 1fr;
+  margin-top: 16px;
+  grid-column-gap: 16px;
+}
+
+.right-div {
+  grid-column: 3/4;
+  justify-self: center;
+}
+
+.middle-div {
+  grid-column: 2/3;
+  justify-self: center;
+}
+
+.left-div {
+  grid-column: 1/2;
+  justify-self: center;
 }

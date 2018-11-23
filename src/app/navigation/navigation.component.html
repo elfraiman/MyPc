@@ -24,7 +24,7 @@
 
           <a *ngIf="user | async" class="nav-item nav-link right-btn" (click)="signOut()">Logout</a>
           <a *ngIf="!(user | async)" class="nav-item nav-link right-btn" routerLink="/signup">GET STARTED</a>
-          <a *ngIf="(user | async)" class="nav-item nav-link right-btn" routerLink="/control-panel">Control Panel</a>
+          <a *ngIf="(user | async)" class="nav-item nav-link right-btn" routerLink="/control-panel">My Profile</a>
         </div>
       </span>
   </links>

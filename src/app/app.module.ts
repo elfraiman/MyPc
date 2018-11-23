@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'angular-bootstrap-md';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -64,6 +65,7 @@ import { TooltipModule, AccordionModule, CarouselModule } from 'ngx-bootstrap';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PricePageComponent } from './pages/price-page/price-page.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {RoundProgressModule} from 'angular-svg-round-progressbar';
 
 const routes: Routes = [
   {
@@ -124,6 +126,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    ChartsModule,
+    RoundProgressModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     MatButtonModule,

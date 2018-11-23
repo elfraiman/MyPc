@@ -2,10 +2,96 @@
 
 <div class="main-content">
 
+  <!-- Left div-->
+  <div class="left-div">
+    <div class="contact-div">
+      <form class="text-center border border-light p-5">
+        <p class="h4 mb-4">Contact us</p>
+        <!-- Name -->
+        <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
+        <!-- Email -->
+        <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
+        <!-- Subject -->
+        <label>Subject</label>
+        <select class="browser-default custom-select mb-4">
+          <option value="" disabled>Choose option</option>
+          <option value="1" selected>Feedback</option>
+          <option value="2">Report a bug</option>
+          <option value="3">Feature request</option>
+          <option value="4">General Help</option>
+        </select>
+        <!-- Message -->
+        <div class="form-group">
+          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+        </div>
+        <!-- Copy -->
+        <div class="row">
+          <div class="col-md-6 mx-auto d-flex justify-content-center">
+            <div class="custom-control custom-checkbox mb-4">
+              <input type="checkbox" class="custom-control-input" id="defaultContactFormCopy">
+              <label class="custom-control-label" for="defaultContactFormCopy">Send me a copy of this message</label>
+            </div>
+          </div>
+        </div>
+        <!-- Send button -->
+        <button class="btn btn-block btn-primary" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- middle div -->
+  <div class="middle-div">
+    <mdb-card class="text-black mb-3" bgColor="bg-secondary" style="max-width: 20rem">
+      <mdb-card-header>Your Package</mdb-card-header>
+      <mdb-card-body>
+        <mdb-card-title>
+          <h5>Your MyPc Package</h5>
+        </mdb-card-title>
+        <mdb-card-text class="text-black">Some quick example text to build on the panel title and make up the bulk
+          of the
+          panel's content.</mdb-card-text>
+        <round-progress [current]="80" [max]="100"></round-progress>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+
+
+  <!-- right div -->
+  <div class="right-div">
+    <mdb-card class="text-black mb-3" bgColor="bg-secondary" style="max-width: 20rem">
+      <mdb-card-header>Cloud</mdb-card-header>
+      <mdb-card-body>
+        <mdb-card-title>
+          <h5>Cloud storage usage</h5>
+        </mdb-card-title>
+        <mdb-card-text class="text-black">Some quick example text to build on the panel title and make up the bulk
+          of the
+          panel's content.</mdb-card-text>
+        <div style="display: block">
+          <canvas mdbChart [chartType]="chartType" [data]="chartData" [labels]="chartLabels" [colors]="chartColors"
+            [options]="chartOptions" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+          </canvas>
+        </div>
+      </mdb-card-body>
+    </mdb-card>
+    <mdb-card class="mb-3" bgColor="bg-secondary" style="max-width: 20rem">
+      <mdb-card-header>Pc</mdb-card-header>
+      <mdb-card-body>
+        <mdb-card-title>
+          <h5>Pc Speed</h5>
+        </mdb-card-title>
+        <mdb-card-text>Some quick example text to build on the panel title and make up the bulk
+          of the
+          panel's content.</mdb-card-text>
+        <div style="display: block">
+          <round-progress [current]="65" [max]="100" [color]="'#45ccce'" [background]="'#eaeaea'" [radius]="125"
+            [stroke]="20" [semicircle]="true" [rounded]="true" [clockwise]="false" [responsive]="false" [duration]="800"
+            [animation]="'easeInOutQuart'" [animationDelay]="0">
+          </round-progress>
+        </div>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
 </div>
 
-<h2>
-  {{ (user | async)?.displayName }}
-  {{ (user | async)?.email }}
-  {{ (user | async)?.phoneNumber }}
-</h2>
+<app-footer-main></app-footer-main>
