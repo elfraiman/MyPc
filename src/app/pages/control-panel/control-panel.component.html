@@ -50,7 +50,7 @@
         <mdb-card-text class="text-black">Some quick example text to build on the panel title and make up the bulk
           of the
           panel's content.</mdb-card-text>
-        <round-progress [current]="80" [max]="100"></round-progress>
+        <round-progress [current]="(user)?.currentCloudStorage" [max]="(user)?.maxCloudStorage"></round-progress>
       </mdb-card-body>
     </mdb-card>
   </div>

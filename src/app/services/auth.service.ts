@@ -8,7 +8,7 @@ import { switchMap, map } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
 
-interface User {
+interface IUser {
   uid: string;
   email: string;
   name: string;
@@ -16,6 +16,8 @@ interface User {
   phone: number;
   address: string;
   userPackage: string;
+  maxCloudStorage: number;
+  currentCloudStorage: number;
 }
 
 export class EmailPasswordCredentials {
@@ -28,7 +30,7 @@ export class EmailPasswordCredentials {
 export class AuthService {
   private usersCollection$: Observable<{}> = this.afs.collection('users').valueChanges();
 
-  user: Observable<User>;
+  user: Observable<IUser>;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -47,7 +49,7 @@ export class AuthService {
     this.user = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
-          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+          return this.afs.doc<IUser>(`users/${user.uid}`).valueChanges();
         } else {
           return of(null);
         }
@@ -67,8 +69,10 @@ export class AuthService {
           name,
           lastName,
           phone,
-          address
-        } as User);
+          address,
+          maxCloudStorage: 2000,
+          currentCloudStorage: 2000
+        } as IUser);
       }).catch(async error => {
         this.toastCtrl.error(error);
         console.log(error, 'error');
@@ -105,14 +109,16 @@ export class AuthService {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
 
-    const data: User = {
+    const data: IUser = {
       uid: user.uid,
       email: user.email,
       name: user.name,
       lastName: user.lastName,
       phone: user.phone,
       address: user.address,
-      userPackage: user.userPackage
+      userPackage: user.userPackage,
+      maxCloudStorage: user.maxCloudStorage,
+      currentCloudStorage: user.currentCloudStorage
     };
 
     return userRef.set(data, { merge: true });

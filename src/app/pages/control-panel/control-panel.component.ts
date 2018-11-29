@@ -2,6 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '../../../../node_modules/angularfire2/auth';
 import { Observable } from '../../../../node_modules/rxjs';
 import { filter } from '../../../../node_modules/rxjs/operators';
+import { FirestoreService } from 'src/app/firestore.service';
+import { User } from 'firebase';
+
+interface IUser {
+  uid: string;
+  email: string;
+  name: string;
+  lastName: string;
+  phone: number;
+  address: string;
+  userPackage: string;
+  maxCloudStorage: number;
+  currentCloudStorage: number;
+}
 
 
 @Component({
@@ -10,7 +24,8 @@ import { filter } from '../../../../node_modules/rxjs/operators';
   styleUrls: ['./control-panel.component.css']
 })
 export class ControlPanelComponent implements OnInit {
-  public user: Observable<firebase.User> = this._firebaseAuth.authState.pipe(filter(Boolean));
+
+  public user: IUser;
 
 
   public chartType = 'bar';
@@ -34,10 +49,10 @@ export class ControlPanelComponent implements OnInit {
   public chartHovered(e: any): void { }
 
 
-  constructor(private _firebaseAuth: AngularFireAuth) { }
+  constructor(private _firebaseAuth: AngularFireAuth, public firestoreService: FirestoreService) { }
 
-  ngOnInit() {
-    this.user.subscribe(value => console.log(value));
+  async ngOnInit() {
+    this.user = await this.firestoreService.getUser();
    }
 
 }
