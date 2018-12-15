@@ -66,6 +66,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { PricePageComponent } from './pages/price-page/price-page.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
+import { FirestoreService } from './firestore.service';
 
 const routes: Routes = [
   {
@@ -177,7 +178,7 @@ const routes: Routes = [
     AccordionModule,
     CarouselModule
   ],
-  providers: [AuthService, AngularFirestore, AngularFireAuth],
+  providers: [AuthService, AngularFirestore, AngularFireAuth, FirestoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

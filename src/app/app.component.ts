@@ -8,7 +8,7 @@ import { FirestoreService } from './firestore.service';
 })
 export class AppComponent {
 
-  constructor(firetoreService: FirestoreService) {
+  constructor(public firetoreService: FirestoreService) {
 
   }
 

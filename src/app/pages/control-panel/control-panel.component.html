@@ -53,7 +53,17 @@
         <round-progress [current]="(user)?.currentCloudStorage" [max]="(user)?.maxCloudStorage"></round-progress>
       </mdb-card-body>
     </mdb-card>
+
+    <mdb-card class="text-black mb-3" bgColor="bg-secondary" style="max-width: 20rem">
+      <mdb-card-header>Your Package</mdb-card-header>
+      <mdb-card-body>
+        <mdb-card-title>
+          <h5>Upload to cloud</h5>
+        </mdb-card-title>
+      </mdb-card-body>
+    </mdb-card>
   </div>
+
 
 
   <!-- right div -->
@@ -64,9 +74,7 @@
         <mdb-card-title>
           <h5>Cloud storage usage</h5>
         </mdb-card-title>
-        <mdb-card-text class="text-black">Some quick example text to build on the panel title and make up the bulk
-          of the
-          panel's content.</mdb-card-text>
+        <mdb-card-text class="text-black">You have a package of {{(user)?.maxCloudStorage}}MB</mdb-card-text>
         <div style="display: block">
           <canvas mdbChart [chartType]="chartType" [data]="chartData" [labels]="chartLabels" [colors]="chartColors"
             [options]="chartOptions" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">

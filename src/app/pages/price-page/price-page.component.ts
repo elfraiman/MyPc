@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirestoreService } from 'src/app/firestore.service';
 
 @Component({
   selector: 'app-price-page',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PricePageComponent implements OnInit {
 
-  constructor() { }
+
+  public updatePackage: Function;
+
+
+  constructor(public firestoreService: FirestoreService) {
+
+  }
 
   ngOnInit() {
+    this.updatePackage = this.firestoreService.updatePackage;
   }
 
 }

@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '../../../../node_modules/angularfire2/auth';
-import { Observable } from '../../../../node_modules/rxjs';
-import { filter } from '../../../../node_modules/rxjs/operators';
 import { FirestoreService } from 'src/app/firestore.service';
-import { User } from 'firebase';
 
 interface IUser {
   uid: string;
@@ -25,7 +21,7 @@ interface IUser {
 })
 export class ControlPanelComponent implements OnInit {
 
-  public user: IUser;
+  public user: firebase.User;
 
 
   public chartType = 'bar';
@@ -49,7 +45,7 @@ export class ControlPanelComponent implements OnInit {
   public chartHovered(e: any): void { }
 
 
-  constructor(private _firebaseAuth: AngularFireAuth, public firestoreService: FirestoreService) { }
+  constructor(public firestoreService: FirestoreService) { }
 
   async ngOnInit() {
     this.user = await this.firestoreService.getUser();
