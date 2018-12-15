@@ -20,11 +20,11 @@
       </ul>
       <span class="navbar-text white-text">
         <div class="navbar-nav justify-content-end">
-          <a *ngIf="!(user | async)" class="nav-item nav-link right-btn" routerLink="/login">Sign in</a>
+          <a *ngIf="!(user$ | async)" class="nav-item nav-link right-btn" routerLink="/login">Sign in</a>
 
-          <a *ngIf="user | async" class="nav-item nav-link right-btn" (click)="signOut()">Logout</a>
-          <a *ngIf="!(user | async)" class="nav-item nav-link right-btn" routerLink="/signup">GET STARTED</a>
-          <a *ngIf="(user | async)" class="nav-item nav-link right-btn" routerLink="/control-panel">My Profile</a>
+          <a *ngIf="user$ | async" class="nav-item nav-link right-btn" (click)="signOut()">Logout</a>
+          <a *ngIf="!(user$ | async)" class="nav-item nav-link right-btn" routerLink="/signup">GET STARTED</a>
+          <a *ngIf="user$ | async" class="nav-item nav-link right-btn" routerLink="/control-panel">My Profile</a>
         </div>
       </span>
   </links>
