@@ -176,7 +176,7 @@ const routes: Routes = [
     TooltipModule,
     AngularFireModule.initializeApp(environment.firebase),
     AccordionModule,
-    CarouselModule
+    CarouselModule,
   ],
   providers: [AuthService, AngularFirestore, AngularFireAuth, FirestoreService],
   bootstrap: [AppComponent]
