@@ -16,7 +16,6 @@ interface IUser {
   currentCloudStorage: number;
 }
 
-
 @Injectable({
   providedIn: 'root'
 })

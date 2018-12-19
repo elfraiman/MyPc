@@ -7,45 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { ChartsModule } from 'angular-bootstrap-md';
-import {
-  MatButtonModule,
-  MatCheckboxModule,
-  MatMenuModule,
-  MatIconModule,
-  MatToolbarModule,
-  MatOptionModule,
-  MatSelectModule,
-  MatFormFieldModule,
-  MatAutocompleteModule,
-  MatBadgeModule,
-  MatBottomSheetModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatInputModule,
-  MatListModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatStepperModule,
-  MatTableModule,
-  MatTabsModule,
-  MatTooltipModule,
-  MatTreeModule,
-} from '@angular/material';
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -66,10 +27,12 @@ import { TooltipModule, AccordionModule, CarouselModule } from 'ngx-bootstrap';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PricePageComponent } from './pages/price-page/price-page.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import {RoundProgressModule} from 'angular-svg-round-progressbar';
+import { RoundProgressModule } from 'angular-svg-round-progressbar';
 import { FirestoreService } from './firestore.service';
 import { DropZoneDirective } from './drop-zone.directive';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { MatFormFieldModule, MatInputModule, MatIconModule } from '@angular/material';
+
 
 const routes: Routes = [
   {
@@ -109,9 +72,8 @@ const routes: Routes = [
     path: '#',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
+  }
 ];
-
 
 @NgModule({
   declarations: [
@@ -136,54 +98,20 @@ const routes: Routes = [
     RoundProgressModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    MatButtonModule,
-    MatCheckboxModule,
-    MatMenuModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatOptionModule,
-    MatAutocompleteModule,
-    MatBadgeModule,
-    MatBottomSheetModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatChipsModule,
-    MatDatepickerModule,
     MDBBootstrapModule.forRoot(),
-    MatDialogModule,
-    MatDividerModule,
-    MatExpansionModule,
-    MatGridListModule,
-    MatInputModule,
-    MatListModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatStepperModule,
-    MatTableModule,
     FormsModule,
-    MatTabsModule,
-    MatTooltipModule,
-    MatTreeModule,
-    RouterModule.forRoot(routes, {useHash: true}),
+    RouterModule.forRoot(routes, { useHash: true }),
     ReactiveFormsModule,
     NgbModule.forRoot(),
     TooltipModule,
     AngularFireModule.initializeApp(environment.firebase),
     AccordionModule,
     CarouselModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [AuthService, AngularFirestore, AngularFireAuth, FirestoreService, AngularFireStorage],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

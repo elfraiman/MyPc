@@ -28,7 +28,7 @@ export class ControlPanelComponent implements OnInit {
 
   public chartType = 'bar';
 
-  public chartData: Array<any> = [200, 500, 800, 1500, 2000];
+  public chartData: Array<number> = [200, 500, 800, 1500, 2000];
 
   public chartLabels: Array<any> = ['Red', 'Green', 'Yellow', 'Grey', 'Dark Grey'];
 
