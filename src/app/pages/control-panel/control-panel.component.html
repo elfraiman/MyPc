@@ -41,27 +41,7 @@
 
   <!-- middle div -->
   <div class="middle-div">
-    <mdb-card class="text-black mb-3" bgColor="bg-secondary" style="max-width: 20rem">
-      <mdb-card-header>Your Package</mdb-card-header>
-      <mdb-card-body>
-        <mdb-card-title>
-          <h5>Your MyPc Package</h5>
-        </mdb-card-title>
-        <mdb-card-text class="text-black">Some quick example text to build on the panel title and make up the bulk
-          of the
-          panel's content.</mdb-card-text>
-        <round-progress [current]="(user)?.currentCloudStorage" [max]="(user)?.maxCloudStorage"></round-progress>
-      </mdb-card-body>
-    </mdb-card>
-
-    <mdb-card class="text-black mb-3" bgColor="bg-secondary" style="max-width: 20rem">
-      <mdb-card-header>Your Package</mdb-card-header>
-      <mdb-card-body>
-        <mdb-card-title>
-          <h5>Upload to cloud</h5>
-        </mdb-card-title>
-      </mdb-card-body>
-    </mdb-card>
+       <file-upload></file-upload>
   </div>
 
 

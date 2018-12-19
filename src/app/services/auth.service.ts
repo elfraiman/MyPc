@@ -30,7 +30,7 @@ export class EmailPasswordCredentials {
 export class AuthService {
   private usersCollection$: Observable<{}> = this.afs.collection('users').valueChanges();
 
-  user: Observable<IUser>;
+  public user: Observable<IUser>;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -51,6 +51,7 @@ export class AuthService {
         if (user) {
           return this.afs.doc<IUser>(`users/${user.uid}`).valueChanges();
         } else {
+          console.log('null user');
           return of(null);
         }
       })

@@ -1,8 +1,8 @@
 .main-content {
   display: grid;
-  grid-template: auto / 1fr 1fr 1fr;
+  grid-template: 100vh / 1fr 0.8fr 1fr;
   margin-top: 16px;
-  grid-column-gap: 16px;
+  grid-column-gap: 0px;
 }
 
 .right-div {
@@ -13,9 +13,14 @@
 .middle-div {
   grid-column: 2/3;
   justify-self: center;
+  width: 100%;
 }
 
 .left-div {
   grid-column: 1/2;
   justify-self: center;
+}
+
+.card-body {
+  width: 100%;
 }

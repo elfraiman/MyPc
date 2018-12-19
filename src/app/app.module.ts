@@ -59,6 +59,7 @@ import { ControlPanelComponent } from './pages/control-panel/control-panel.compo
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FooterMainComponent } from './components/footer-main/footer-main.component';
 import { TooltipModule, AccordionModule, CarouselModule } from 'ngx-bootstrap';
@@ -67,6 +68,8 @@ import { PricePageComponent } from './pages/price-page/price-page.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
 import { FirestoreService } from './firestore.service';
+import { DropZoneDirective } from './drop-zone.directive';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
 
 const routes: Routes = [
   {
@@ -123,7 +126,9 @@ const routes: Routes = [
     ControlPanelComponent,
     HomePageComponent,
     ContactComponent,
-    PricePageComponent
+    PricePageComponent,
+    DropZoneDirective,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,
@@ -178,7 +183,7 @@ const routes: Routes = [
     AccordionModule,
     CarouselModule,
   ],
-  providers: [AuthService, AngularFirestore, AngularFireAuth, FirestoreService],
+  providers: [AuthService, AngularFirestore, AngularFireAuth, FirestoreService, AngularFireStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

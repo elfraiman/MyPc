@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/firestore.service';
+import * as firebase from 'firebase';
 
 interface IUser {
   uid: string;
@@ -23,6 +24,7 @@ export class ControlPanelComponent implements OnInit {
 
   public user: firebase.User;
 
+  public storageRef = firebase.storage().ref();
 
   public chartType = 'bar';
 
