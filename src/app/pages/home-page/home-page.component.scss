@@ -1,14 +1,30 @@
-#DONT-LOSE-IT {
-  text-align: center;
-  font-size: 60px;
-  font-weight: 800;
+
+.smile {
+  margin-top: 100px;
+  width: 100%;
+  height: auto;
 }
 
-.wrapper {
-  padding: 32px;
-  background-color: rgba(0, 0, 0, 0.87);
+.hover-div {
+  z-index: 5;
+  position: absolute;
+  contain: content;
+  width: 23%;
+  height: 85%;
+  left: 16%;
+  top: 15%;
+  background-color: rgb(207, 25, 55);
   color: white;
-  height: 500px;
+  padding: 32px;
+  h2 {
+    font-size: 100px;
+  }
+  h3 {
+    font-size: 48px;
+    margin-bottom: 32px;
+  }
+}
+.who-container {
   img {
     width: 100%;
   }
@@ -27,12 +43,12 @@
  .meeting-img {
    width: 100%;
  }
-.who-container {
-  img {
-    width: 100%;
-  }
-}
 
+ .text-block {
+   text-align: center;
+   padding-right: 10%;
+   padding-left: 10%;
+ }
 
 
 @media only screen and (max-width: 600px) {

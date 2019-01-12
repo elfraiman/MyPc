@@ -1,18 +1,17 @@
 <app-navigation></app-navigation>
 <div class="wrapper">
-  <div class="container-fluid header-container">
-    <div class="row-lg-12 padding">
-      <div class="col">
-        <h2 id="DONT-LOSE-IT" class="animated fadeIn">MYPC. <br /> Your personal pc wherever you are</h2>
-      </div>
-    </div>
-    <div class="row padding justify-content-center data-safe">
-      <b>
-        MyPc is a pocket-sized Windows PC that gives you desktop-like
-        computing whenever you need it. <br />
-        MyPc opens up a world of computing possibilities for your
-        home,
-        office, or anywhere else you need it.</b>
+  <div class="container-fluid">
+      <div class="hover-div animated fadeInLeftBig">
+          <h2>-</h2>
+          <h3>Perfect portability</h3>
+          <p>MyPc is a pocket-sized Windows PC that gives you desktop-like
+              computing whenever you need it.
+              MyPc opens up a world of computing possibilities for your
+              home,
+              office, or anywhere else you need it.</p>
+        </div>
+    <div class="row-sm-12 padding animated fadeIn">
+      <img src="../../../assets/smilecrop.jpg" class="smile" />
     </div>
   </div>
 </div>
@@ -20,10 +19,7 @@
 <!-- generation container -->
 <div class="container-fluid generation-container" #pictureSlider>
   <div class="row padding">
-    <div class="col-sm-6">
-      <img src="../../../assets/airport.jpg" class="airport-img" />
-    </div>
-    <div class="col-sm-6 align-self-center">
+    <div class="col-sm-6 align-self-center text-block">
       <h3>Mobile flexibility</h3>
       <p>Whether you're on vacation or a business trip, MyPc gives you all the computing functions you need,
         without
@@ -31,19 +27,22 @@
         catch
         up on some work.</p>
     </div>
+    <div class="col-sm-6">
+        <img src="../../../assets/airport.jpg" class="airport-img" />
+      </div>
   </div>
   <div class="row padding">
-    <div class="col-sm-6 align-self-center">
-      <h3>Full PC functionality</h3>
-      <p>You'll enjoy desktop-like levels of performance and beautiful Full HD visuals thanks to MyPc's Power.
-        There's no setup needed, MyPc boots up quickly and is ready to go right out-of-the-box.
-        that, you get 20GB of PC-Lab WebStorage space free, so wherever you are in the world, you can use your MyPc
-        to
-        access files stored in the cloud.</p>
-    </div>
     <div class="col-sm-6">
       <img src="../../../assets/meeting.jpg" class="meeting-img" />
     </div>
+    <div class="col-sm-6 align-self-center  text-block">
+        <h3>Full PC functionality</h3>
+        <p>You'll enjoy desktop-like levels of performance and beautiful Full HD visuals thanks to MyPc's Power.
+          There's no setup needed, MyPc boots up quickly and is ready to go right out-of-the-box.
+          that, you get 20GB of PC-Lab WebStorage space free, so wherever you are in the world, you can use your MyPc
+          to
+          access files stored in the cloud.</p>
+      </div>
   </div>
 </div>
 
@@ -62,7 +61,7 @@
 
 <app-footer-main></app-footer-main>
 
-<!-- 
+<!--
 <div class="col-sm">
   <h3>Mobile flexibility</h3>
   <p>Whether you're on vacation or a business trip, MyPc gives you all the computing functions you need,

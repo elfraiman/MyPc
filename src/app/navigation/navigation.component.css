@@ -1,10 +1,11 @@
  * {
    font-family: 'Montserrat', sans-serif;
-
  }
-
+.navbar {
+  z-index: 10000;
+}
  .navbar-nav a:hover {
-   border-bottom: 4px solid #FF5722;
+   border-bottom: 3px solid #FF5722;
  }
 
  #brand {
