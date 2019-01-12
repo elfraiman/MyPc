@@ -1,6 +1,5 @@
 
 .smile {
-  margin-top: 100px;
   width: 100%;
   height: auto;
 }
@@ -24,6 +23,16 @@
     margin-bottom: 32px;
   }
 }
+
+.hover-div-bottom {
+  z-index: 50;
+  background-color: rgb(207, 25, 55);
+  color: white;
+  padding: 32px;
+  width: 40%;
+  text-align: center;
+  float: right;
+}
 .who-container {
   img {
     width: 100%;
@@ -34,6 +43,7 @@
 }
 
 .generation-container {
+  margin-top: 45px;
   padding: 64px;
 }
  .airport-img {
