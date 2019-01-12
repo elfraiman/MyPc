@@ -5,9 +5,8 @@
   grid-template: 1fr / 1fr 1fr 1fr;
   height: 130px;
   position: relative;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
-  align-content: end;
   margin-top: 32px;
 }
 
@@ -36,6 +35,7 @@
   list-style: none;
   padding-left: 0px;
   color: white;
+  margin-top: 15%;
 }
 
 #middle-list li {
