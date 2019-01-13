@@ -63,7 +63,7 @@ export class AuthService {
       .then(async response => {
         this.router.navigate(['login']);
         this.toastCtrl.success('Signed-up successfuly, you may now log-in');
-        return this.afs.doc('users/' + response.user.uid).set({
+        return this.afs.doc('users/' + response.user.email).set({
           email,
           uid: response.user.email,
           userPackage: 'free',
@@ -72,7 +72,7 @@ export class AuthService {
           phone,
           address,
           maxCloudStorage: 2000,
-          currentCloudStorage: 2000
+          currentCloudStorage: 0
         } as IUser);
       }).catch(async error => {
         this.toastCtrl.error(error);

@@ -33,7 +33,7 @@ export class FileUploadComponent {
     map(val => val.email)
   );
 
-  constructor(private storage: AngularFireStorage, private db: AngularFirestore, private afAuth: AngularFireAuth) { }
+  constructor(private storage: AngularFireStorage, private afs: AngularFirestore, private afAuth: AngularFireAuth) { }
 
 
   toggleHover(event: boolean) {
@@ -42,10 +42,12 @@ export class FileUploadComponent {
 
 
  async startUpload(event: FileList) {
-    // The File object
+  const userEmail = await this.userEmail$.pipe(take(1)).toPromise();
+  const userDoc = this.afs.collection('users').doc(userEmail);
+  await userDoc.get().toPromise().then( async (doc) => {
+    if ( doc.exists ) {
+          // The File object
     const file = event.item(0);
-
-    const userEmail = await this.userEmail$.pipe(take(1)).toPromise();
 
     // Client-side validation example
    /*  if (file.type.split('/')[0] !== 'image') {
@@ -66,7 +68,29 @@ export class FileUploadComponent {
     this.percentage = this.task.percentageChanges();
     this.snapshot   = this.task.snapshotChanges();
 
-    // The file's download URL
+    // filesize
+    const finalSize: Number = await this.snapshot.toPromise().then(value => {
+      const currentUserStorageValue = parseInt(doc.get('currentStorageData'), 10);
+      // uploaded in KB;
+      const uploadedFileSize = Number(value.totalBytes / 1024);
+      // final in MB;
+      const finalValue = Math.round((uploadedFileSize + currentUserStorageValue) / 1024);
+      return finalValue;
+    });
+
+
+     userDoc.set({
+       currentStorageData: finalSize
+     }, {merge: true})
+     .then(val => console.log('updated values'))
+     .catch(err => console.log('error updaing user data'));
+
+    console.log(finalSize);
+    } else {
+      console.log('document does not exist');
+    }
+  });
+
   }
 
   // Determines if the upload task is active
