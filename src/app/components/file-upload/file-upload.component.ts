@@ -72,13 +72,13 @@ export class FileUploadComponent {
 				this.snapshot = this.task.snapshotChanges();
 
 				await this.snapshot.toPromise().then((value) => {
-          const currentUserStorageValue = parseInt(doc.get('currentCloudStorage'), 10);
+          const currentUserStorageValue = doc.get('currentCloudStorage');
           console.log(currentUserStorage, 'current user storage');
 					// uploaded in KB;
           const uploadedFileSize = Number(value.totalBytes / 1024);
           console.log(uploadedFileSize, 'uploaded size');
 					// final in MB;
-          const finalValue = currentUserStorageValue + (uploadedFileSize / 1024);
+          const finalValue = currentUserStorageValue + uploadedFileSize / 1024;
           console.log('final value', finalValue);
 					userDoc
 						.set(
