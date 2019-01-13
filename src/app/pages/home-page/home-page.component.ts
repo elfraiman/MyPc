@@ -7,29 +7,48 @@ import { TweenLite } from 'gsap';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit, AfterViewInit {
-  @ViewChild('video') myVideo: any;
-  @ViewChild('pictureSlider') picSlider: ElementRef;
-
+  @ViewChild('middleblock') middleblock: ElementRef;
+  @ViewChild('undermid') undermid: ElementRef;
   private observer: IntersectionObserver;
-
-  constructor() {}
+  private undermidObserver: IntersectionObserver;
+  constructor() {
+    this.observer = null;
+  }
 
   ngOnInit() {}
 
   ngAfterViewInit() {
-    this.myVideo.nativeElement.play();
 
     this.observer = new IntersectionObserver(
       entries => {
         if (entries[0].isIntersecting === true) {
-          TweenLite.to(this.picSlider.nativeElement, 2, { backgroundColor: 'rgba(123, 17, 184, 0.9)' });
+          console.log('intersect');
+          TweenLite.to(this.middleblock.nativeElement, 1, {
+              opacity: 1
+            });
         }
       },
       {
-        threshold: 0.20
+        threshold: 0.35
       }
     );
 
-    this.observer.observe(this.picSlider.nativeElement);
+    this.undermidObserver = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting === true) {
+          console.log('intersect');
+          TweenLite.to(this.undermid.nativeElement, 1, {
+              opacity: 1
+            });
+        }
+      },
+      {
+        threshold: 0.35
+      }
+    );
+    setTimeout(() => {
+      this.observer.observe(this.middleblock.nativeElement);
+      this.undermidObserver.observe(this.undermid.nativeElement);
+    }, 1000);
   }
 }
