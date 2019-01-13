@@ -1,13 +1,13 @@
 .main-content {
   display: grid;
-  grid-template: 100vh / 1fr 0.8fr 1fr;
+  grid-template: 1fr / 1fr 1fr 1fr;
   margin-top: 16px;
   grid-column-gap: 0px;
 }
 
 .right-div {
   grid-column: 3/4;
-  justify-self: center;
+  justify-self: start;
 }
 
 .middle-div {
@@ -23,4 +23,18 @@
 
 .card-body {
   width: 100%;
+}
+
+#max {
+  position: absolute;
+  font-size: 12px;
+  bottom: 5px;
+  left: 40px;
+}
+
+#current {
+  position: absolute;
+  right: 40px;
+  font-size: 12px;
+  bottom: 5px;
 }

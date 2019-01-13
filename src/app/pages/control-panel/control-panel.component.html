@@ -48,33 +48,19 @@
 
   <!-- right div -->
   <div class="right-div">
-    <mdb-card class="text-black mb-3" bgColor="bg-secondary" style="max-width: 20rem">
-      <mdb-card-header>Cloud</mdb-card-header>
-      <mdb-card-body>
-        <mdb-card-title>
-          <h5>Cloud storage usage</h5>
-        </mdb-card-title>
-        <mdb-card-text class="text-black">You have a package of {{(user)?.maxCloudStorage}}MB</mdb-card-text>
-        <div style="display: block">
-          <canvas mdbChart [chartType]="chartType" [data]="chartData" [labels]="chartLabels" [colors]="chartColors"
-            [options]="chartOptions" [legend]="true" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
-          </canvas>
-        </div>
-      </mdb-card-body>
-    </mdb-card>
     <mdb-card class="mb-3" bgColor="bg-secondary" style="max-width: 20rem">
       <mdb-card-header>Pc</mdb-card-header>
       <mdb-card-body>
         <mdb-card-title>
-          <h5>Pc Speed</h5>
+          <h5>Cloud Space</h5>
         </mdb-card-title>
-        <mdb-card-text>Some quick example text to build on the panel title and make up the bulk
-          of the
-          panel's content.</mdb-card-text>
+        <mdb-card-text class="text-black">You have a package of {{(user)?.maxCloudStorage}}MB</mdb-card-text>
         <div style="display: block">
-          <round-progress [current]="65" [max]="100" [color]="'#45ccce'" [background]="'#eaeaea'" [radius]="125"
-            [stroke]="20" [semicircle]="true" [rounded]="true" [clockwise]="false" [responsive]="false" [duration]="800"
-            [animation]="'easeInOutQuart'" [animationDelay]="0">
+          <p id="current">{{ (user$ | async)?.payload.data().currentCloudStorage.toFixed(1) }}MB</p>
+          <p id="max">{{ user?.maxCloudStorage }}MB</p>
+          <round-progress [current]="(user$ | async)?.payload.data().currentCloudStorage" [max]="user?.maxCloudStorage" [color]="'#45ccce'" [background]="'#eaeaea'" [radius]="125"
+            [stroke]="20" [semicircle]="true" [rounded]="true" [clockwise]="false" [responsive]="true" [duration]="800"
+            [animation]="'easeInOutQuart'" [animationDelay]="1">
           </round-progress>
         </div>
       </mdb-card-body>
