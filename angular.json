@@ -35,7 +35,10 @@
               "node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
               "node_modules/angular-bootstrap-md/scss/mdb-free.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/gsap/umd/TweenMax.js",
+              "./node_modules/gsap/umd/ScrollToPlugin.js"
+            ]
           },
           "configurations": {
             "production": {
