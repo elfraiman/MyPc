@@ -1,23 +1,26 @@
-
+* {
+  font-family: 'Poppins';
+}
 .smile {
   width: 100%;
   height: auto;
 }
 
-.hover-div {
-  z-index: 5;
-  position: absolute;
-  contain: content;
-  width: 23%;
-  height: 80%;
-  left: 16%;
-  top: 15%;
+.top-container {
+  padding: 0px;
+  margin: 0px;
+}
+
+.red-div {
   background-color: rgb(207, 25, 55);
   color: white;
   padding: 32px;
+  height: 500px;
+
   h2 {
     font-size: 100px;
   }
+
   h3 {
     font-size: 48px;
     margin-bottom: 32px;
@@ -34,11 +37,13 @@
   float: right;
   height: 300px;
 }
-.who-container {
+
+.pocket-div {
   img {
     width: 100%;
   }
 }
+
 .padding-bottom {
   padding-bottom: 16px;
 }
@@ -51,51 +56,77 @@
   opacity: 0;
 }
 
-.middle-block {
-  opacity: 1;
-  padding: 64px;
-  margin-top: 12%;
+.airport-img {
+  width: 100%;
 }
- .airport-img {
-   width: 100%;
- }
 
- .meeting-img {
-   width: 100%;
- }
+.meeting-img {
+  width: 100%;
+}
 
- .text-block {
-   text-align: center;
-   padding-right: 10%;
-   padding-left: 10%;
- }
+.text-block {
+  text-align: center;
+  padding-right: 5%;
+  padding-left: 5%;
+}
 
 
 @media only screen and (max-width: 600px) {
-  #DONT-LOSE-IT {
-    text-align: center;
-    font-size: 45px;
-    font-weight: 800;
-    z-index: 1;
+  * {
+    p {
+      font-size: 14px;
+    }
+  }
+  .top-container {
+    padding: 0px;
   }
 
-  .wrapper {
-    padding-top: 60px;
+  .smile {
+    width: 100%;
   }
 
-  .header-container {
-    height: 60vh;
-  }
-
-  .data-safe {
-    text-align: center
-  }
-
-  .generation-container {
-    padding: 25px 15px 15px 15px;
+  .red-div {
+    height: 200px;
+    padding: 16px;
 
     h2 {
-      font-size: 35px;
+      font-size: 20px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .middle-block {
+    opacity: 1;
+    padding: 6px;
+    margin-top: 5%;
+  }
+
+  .text-block {
+    text-align: center;
+    padding-right: 0%;
+    padding-left: 0%;
+  }
+
+  .hover-div-bottom {
+    z-index: 50;
+    background-color: rgb(207, 25, 55);
+    color: white;
+    padding: 16px;
+    width: 100%;
+    text-align: center;
+    float: right;
+    height: 80px;
+
+    h3 {
+      font-size: 20px;
     }
   }
 }

@@ -13,9 +13,6 @@
   background-color: rgba(128, 128, 128, 0.082);
   margin-right: 56px;
   margin-left: 56px;
-  font-family: futura-pt, sans-serif;
-  font-style: normal;
-  font-weight: 300;
   width: 60%;
   justify-content: end;
   justify-self: end;
@@ -47,7 +44,7 @@
 .bottom-div {
   grid-row: 3/4;
   grid-column: 1/3;
-  
+
 }
 
 .contact-div {
@@ -113,5 +110,5 @@
     }
 
     padding: 16px 16px 16px 16px;
-  } 
+  }
 }
