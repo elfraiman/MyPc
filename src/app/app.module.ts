@@ -32,7 +32,7 @@ import { FirestoreService } from './firestore.service';
 import { DropZoneDirective } from './drop-zone.directive';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { MatFormFieldModule, MatInputModule, MatIconModule } from '@angular/material';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 const routes: Routes = [
   {
@@ -109,7 +109,8 @@ const routes: Routes = [
     CarouselModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSidenavModule
   ],
   providers: [AuthService, AngularFirestore, AngularFireAuth, FirestoreService, AngularFireStorage],
   bootstrap: [AppComponent]
