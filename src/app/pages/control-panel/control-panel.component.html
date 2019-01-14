@@ -41,14 +41,7 @@
 
   <!-- middle div -->
   <div class="middle-div">
-       <file-upload></file-upload>
-  </div>
-
-
-
-  <!-- right div -->
-  <div class="right-div">
-    <mdb-card class="mb-3" bgColor="bg-secondary" style="max-width: 20rem">
+    <mdb-card class="mb-3" bgColor="bg-secondary">
       <mdb-card-header>Pc</mdb-card-header>
       <mdb-card-body>
         <mdb-card-title>
@@ -58,13 +51,39 @@
         <div style="display: block">
           <p id="current">{{ (user$ | async)?.payload.data().currentCloudStorage.toFixed(1) }}MB</p>
           <p id="max">{{ user?.maxCloudStorage }}MB</p>
-          <round-progress [current]="(user$ | async)?.payload.data().currentCloudStorage" [max]="user?.maxCloudStorage" [color]="'#45ccce'" [background]="'#eaeaea'" [radius]="125"
-            [stroke]="20" [semicircle]="true" [rounded]="true" [clockwise]="false" [responsive]="true" [duration]="800"
-            [animation]="'easeInOutQuart'" [animationDelay]="1">
+          <round-progress [current]="(user$ | async)?.payload.data().currentCloudStorage" [max]="user?.maxCloudStorage"
+            [color]="'#45ccce'" [background]="'#eaeaea'" [radius]="125" [stroke]="20" [semicircle]="true" [rounded]="true"
+            [clockwise]="false" [responsive]="true" [duration]="800" [animation]="'easeInOutQuart'" [animationDelay]="1">
           </round-progress>
         </div>
       </mdb-card-body>
     </mdb-card>
+    <file-upload></file-upload>
+  </div>
+
+
+
+  <!-- right div -->
+  <div class="right-div">
+    <span>
+      <h4>CHAT WITH US:</h4> <br />
+      If you have an issue or question that requires immediate attention, you can click below to chat live with a
+      customer service representative.
+      <br />
+      If we aren't available, Drop us an email to the right and we'll respond within 24-48 hours.
+    </span><br />
+
+    <button class="btn btn-primary chat-btn" type="submit">Chat now</button> <br />
+
+    <span style="line-height: 2">
+      <h4 style="margin-top: 26px;"> GIVE US A CALL: </h4> <br />
+
+      052222222<br />
+
+      Sunday - Friday 8:00 AM - 18:00 PM <br />
+
+      Or you can reach us via email at <b>support@pclab-mypc.com</b> and expect a response within 24-48 hours. <br />
+    </span>
   </div>
 </div>
 

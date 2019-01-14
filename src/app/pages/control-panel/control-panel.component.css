@@ -7,13 +7,14 @@
 
 .right-div {
   grid-column: 3/4;
-  justify-self: start;
+  justify-self: center;
 }
 
 .middle-div {
   grid-column: 2/3;
-  justify-self: center;
+  justify-self: center !important;
   width: 100%;
+  padding: 0px 32px 32px 32px;
 }
 
 .left-div {
@@ -29,12 +30,12 @@
   position: absolute;
   font-size: 12px;
   bottom: 5px;
-  left: 40px;
+  left: 20%;
 }
 
 #current {
   position: absolute;
-  right: 40px;
+  right: 20%;
   font-size: 12px;
   bottom: 5px;
 }
