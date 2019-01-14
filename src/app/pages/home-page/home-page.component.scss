@@ -1,84 +1,94 @@
-#DONT-LOSE-IT {
-  text-align: center;
-  font-size: 100px;
-  font-weight: 800;
-  z-index: 1;
+
+.smile {
+  width: 100%;
+  height: auto;
 }
-.wrapper {
-  display: flex;
-  position: relative;
-  top: 120px;
-}
-.header-container {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.105);
-  height: 75vh;
-  max-width: 1300px;
-  .col {
-    align-content: center;
-    justify-content: center;
+
+.hover-div {
+  z-index: 5;
+  position: absolute;
+  contain: content;
+  width: 23%;
+  height: 80%;
+  left: 16%;
+  top: 15%;
+  background-color: rgb(207, 25, 55);
+  color: white;
+  padding: 32px;
+  h2 {
+    font-size: 100px;
   }
-  .row {
-    align-content: center;
-    justify-content: center;
+  h3 {
+    font-size: 48px;
+    margin-bottom: 32px;
   }
 }
 
+.hover-div-bottom {
+  z-index: 50;
+  background-color: rgb(207, 25, 55);
+  color: white;
+  padding: 32px;
+  width: 40%;
+  text-align: center;
+  float: right;
+  height: 300px;
+}
+.who-container {
+  img {
+    width: 100%;
+  }
+}
 .padding-bottom {
   padding-bottom: 16px;
 }
 
-.generation-container {
-  padding: 35px 25px 25px 25px;
-  background-color: rgb(32, 32, 32);
-  color: white;
-
-  .img-slide {
-    display: block;
-    width: 100vw;
-    height: 60%;
-  }
-
-  h2 {
-    font-size: 50px;
-  }
-
-  .row {
-    padding: 20px 20px 20px 20px;
-  }
-
-
+.midblock {
+  opacity: 0;
 }
 
-.who-container {
-  height: 500px;
-  padding: 35px 25px 25px 25px;
-  margin-top: 10%;
-
-  h2 {
-    font-size: 45px;
-  }
-
-  .row {
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
+.undermid {
+  opacity: 0;
 }
 
-
-
-
-.carousel-caption {
-  color: black;
+.middle-block {
+  opacity: 1;
+  padding: 64px;
+  margin-top: 12%;
 }
+ .airport-img {
+   width: 100%;
+ }
 
+ .meeting-img {
+   width: 100%;
+ }
+
+ .text-block {
+   text-align: center;
+   padding-right: 10%;
+   padding-left: 10%;
+ }
 
 
 @media only screen and (max-width: 600px) {
   #DONT-LOSE-IT {
     text-align: center;
-    font-size: 35px;
+    font-size: 45px;
     font-weight: 800;
     z-index: 1;
+  }
+
+  .wrapper {
+    padding-top: 60px;
+  }
+
+  .header-container {
+    height: 60vh;
+  }
+
+  .data-safe {
+    text-align: center
   }
 
   .generation-container {

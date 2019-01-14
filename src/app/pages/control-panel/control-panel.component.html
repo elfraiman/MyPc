@@ -2,10 +2,89 @@
 
 <div class="main-content">
 
+  <!-- Left div-->
+  <div class="left-div">
+    <div class="contact-div">
+      <form class="text-center border border-light p-5">
+        <p class="h4 mb-4">Contact us</p>
+        <!-- Name -->
+        <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
+        <!-- Email -->
+        <input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
+        <!-- Subject -->
+        <label>Subject</label>
+        <select class="browser-default custom-select mb-4">
+          <option value="" disabled>Choose option</option>
+          <option value="1" selected>Feedback</option>
+          <option value="2">Report a bug</option>
+          <option value="3">Feature request</option>
+          <option value="4">General Help</option>
+        </select>
+        <!-- Message -->
+        <div class="form-group">
+          <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+        </div>
+        <!-- Copy -->
+        <div class="row">
+          <div class="col-md-6 mx-auto d-flex justify-content-center">
+            <div class="custom-control custom-checkbox mb-4">
+              <input type="checkbox" class="custom-control-input" id="defaultContactFormCopy">
+              <label class="custom-control-label" for="defaultContactFormCopy">Send me a copy of this message</label>
+            </div>
+          </div>
+        </div>
+        <!-- Send button -->
+        <button class="btn btn-block btn-primary" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- middle div -->
+  <div class="middle-div">
+    <mdb-card class="mb-3" bgColor="bg-secondary">
+      <mdb-card-header>Pc</mdb-card-header>
+      <mdb-card-body>
+        <mdb-card-title>
+          <h5>Cloud Space</h5>
+        </mdb-card-title>
+        <mdb-card-text class="text-black">You have a package of {{(user)?.maxCloudStorage}}MB</mdb-card-text>
+        <div style="display: block">
+          <p id="current">{{ (user$ | async)?.payload.data().currentCloudStorage.toFixed(1) }}MB</p>
+          <p id="max">{{ user?.maxCloudStorage }}MB</p>
+          <round-progress [current]="(user$ | async)?.payload.data().currentCloudStorage" [max]="user?.maxCloudStorage"
+            [color]="'#45ccce'" [background]="'#eaeaea'" [radius]="125" [stroke]="20" [semicircle]="true" [rounded]="true"
+            [clockwise]="false" [responsive]="true" [duration]="800" [animation]="'easeInOutQuart'" [animationDelay]="1">
+          </round-progress>
+        </div>
+      </mdb-card-body>
+    </mdb-card>
+    <file-upload></file-upload>
+  </div>
+
+
+
+  <!-- right div -->
+  <div class="right-div">
+    <span>
+      <h4>CHAT WITH US:</h4> <br />
+      If you have an issue or question that requires immediate attention, you can click below to chat live with a
+      customer service representative.
+      <br />
+      If we aren't available, Drop us an email to the right and we'll respond within 24-48 hours.
+    </span><br />
+
+    <button class="btn btn-primary chat-btn" type="submit">Chat now</button> <br />
+
+    <span style="line-height: 2">
+      <h4 style="margin-top: 26px;"> GIVE US A CALL: </h4> <br />
+
+      052222222<br />
+
+      Sunday - Friday 8:00 AM - 18:00 PM <br />
+
+      Or you can reach us via email at <b>support@pclab-mypc.com</b> and expect a response within 24-48 hours. <br />
+    </span>
+  </div>
 </div>
 
-<h2>
-  {{ (user | async)?.displayName }}
-  {{ (user | async)?.email }}
-  {{ (user | async)?.phoneNumber }}
-</h2>
+<app-footer-main></app-footer-main>

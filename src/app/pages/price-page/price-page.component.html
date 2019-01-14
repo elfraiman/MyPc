@@ -1,5 +1,116 @@
 <app-navigation></app-navigation>
-<div class="container-fluid animated slideInLeft">
+<!-- Card -->
+<div class="wrapper" #wrapper>
+  <mdb-card class="animated slideInLeft" >
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <!-- Card img -->
+      <mdb-card-img src="../../../assets/desk.jpeg" alt="Mypc 128 Giga bytes"></mdb-card-img>
+      <a>
+        <div class="mask"></div>
+      </a>
+    </div>
+    <!--Card content-->
+    <mdb-card-body>
+      <!--Title-->
+      <mdb-card-title>
+        <h4>MyPc 128GB</h4>
+      </mdb-card-title>
+
+      <!--Text-->
+      <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+        content.
+      </mdb-card-text>
+
+      <a href="#" mdbBtn color="primary" mdbWavesEffect>Purchase</a>
+    </mdb-card-body>
+  </mdb-card>
+
+
+  <mdb-card class="animated slideInLeft">
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <!-- Card img -->
+      <mdb-card-img src="../../../assets/markting.jpeg" alt="Card image cap"></mdb-card-img>
+      <a>
+        <div class="mask"></div>
+      </a>
+    </div>
+    <!--Card content-->
+    <mdb-card-body>
+      <!--Title-->
+      <mdb-card-title>
+        <h4>MyPc 240GB</h4>
+      </mdb-card-title>
+
+      <!--Text-->
+      <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+        content.
+      </mdb-card-text>
+
+      <a href="#" mdbBtn color="primary" mdbWavesEffect>Purchase</a>
+    </mdb-card-body>
+  </mdb-card>
+
+
+  <mdb-card class="animated slideInLeft">
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <!-- Card img -->
+      <mdb-card-img src="../../../assets/macbook.jpeg" alt="MyPc 500 Giga byte"></mdb-card-img>
+      <a>
+        <div class="mask"></div>
+      </a>
+    </div>
+    <!--Card content-->
+    <mdb-card-body>
+      <!--Title-->
+      <mdb-card-title>
+        <h4>MyPc 512GB</h4>
+      </mdb-card-title>
+
+      <!--Text-->
+      <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+        content.
+      </mdb-card-text>
+
+      <button (click)="updatePackage(5000)" mdbBtn color="primary" mdbWavesEffect>Purchase</button>
+    </mdb-card-body>
+  </mdb-card>
+
+
+
+  <mdb-card class="animated slideInLeft">
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <!-- Card img -->
+      <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap"></mdb-card-img>
+      <a>
+        <div class="mask"></div>
+      </a>
+    </div>
+    <!--Card content-->
+    <mdb-card-body>
+      <!--Title-->
+      <mdb-card-title>
+        <h4>MyPc 1024GB</h4>
+      </mdb-card-title>
+
+      <!--Text-->
+      <mdb-card-text> Some quick example text to build on the card title and make up the bulk of the card's
+        content.
+      </mdb-card-text>
+
+      <a href="#" mdbBtn color="primary" mdbWavesEffect>Purchase</a>
+    </mdb-card-body>
+  </mdb-card>
+</div>
+
+<div class="container-fluid indigo-bg">
+  <div class="row" style="height: 35vh; margin-top: 5%;">
+    <h2 class="light-fg"> Place holder for video</h2>
+  </div>
+</div>
+<app-footer-main></app-footer-main>
+<!-- Card -->
+
+<!-- 
   <div class="row justify-content-center padding" style="text-align: center;">
     <h2>Our products</h2>
   </div>
@@ -39,5 +150,4 @@
     </div>
   </div>
 </div>
-
-
+ -->

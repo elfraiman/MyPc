@@ -1,3 +1,46 @@
 .main-content {
-  padding: 25px 20vw 25px 20vw;
+  display: grid;
+  grid-template: 1fr / 1fr 1fr 1fr;
+  margin-top: 16px;
+  grid-column-gap: 0px;
+}
+
+.right-div {
+  grid-column: 3/4;
+  justify-self: center;
+}
+
+.middle-div {
+  grid-column: 2/3;
+  justify-self: center !important;
+  width: 100%;
+  padding: 0px 32px 32px 32px;
+}
+
+.left-div {
+  grid-column: 1/2;
+  justify-self: center;
+}
+
+.chat-btn {
+  margin-left: 0;
+  margin-top: 16px;
+}
+
+.card-body {
+  width: 100%;
+}
+
+#max {
+  position: absolute;
+  font-size: 12px;
+  bottom: 5px;
+  left: 20%;
+}
+
+#current {
+  position: absolute;
+  right: 20%;
+  font-size: 12px;
+  bottom: 5px;
 }
