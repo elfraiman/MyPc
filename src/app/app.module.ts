@@ -100,7 +100,7 @@ const routes: Routes = [
     ToastrModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     FormsModule,
-    RouterModule.forRoot(routes, { useHash: true }),
+    RouterModule.forRoot(routes, { useHash: false }),
     ReactiveFormsModule,
     NgbModule.forRoot(),
     TooltipModule,
