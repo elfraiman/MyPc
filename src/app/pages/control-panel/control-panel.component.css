@@ -44,3 +44,27 @@
   font-size: 12px;
   bottom: 5px;
 }
+
+@media only screen and (max-width: 600px) {
+  .main-content {
+    grid-template: 1fr 1fr 1fr/ 1fr;
+  }
+
+  .left-div {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    justify-self: center;
+  }
+  .middle-div {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .right-div {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    justify-content: center;
+    justify-items: center;
+    padding: 32px;
+  }
+
+}
