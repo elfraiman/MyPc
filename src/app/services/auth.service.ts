@@ -83,7 +83,7 @@ export class AuthService {
   signInWithEmail(email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password).then(response => {
       console.log('AuthService: Success', response.user);
-      this.router.navigate(['']);
+      this.router.navigate(['control-panel']);
       this.toastCtrl.success('Successfuly logged in');
     }).catch(async error => {
       this.toastCtrl.error(error);
