@@ -1,5 +1,3 @@
-
-
 .smile {
   width: 100%;
   height: auto;
@@ -18,33 +16,23 @@
   width: 350px;
 }
 
-.hover-div-bottom {
-  z-index: 50;
-  background-color: rgb(207, 25, 55);
-  color: white;
-  padding: 32px;
-  width: 40%;
-  text-align: center;
-  float: right;
-  height: 300px;
-}
-
-.pocket-div {
-  img {
-    width: 100%;
-  }
-}
-
 .padding-bottom {
   padding-bottom: 16px;
 }
 
-.midblock {
+.mid-block {
   opacity: 0;
 }
 
-.undermid {
+.under-mid {
   opacity: 0;
+  img {
+    position: relative;
+    left: 100%;
+  }
+  .under-mid-text {
+    right: 50%;
+  }
 }
 
 .airport-img {
@@ -54,70 +42,90 @@
 .meeting-img {
   width: 100%;
 }
+.loadout-img {
+  width: 100%;
+}
+
+.pocket-div {
+  display: flex;
+  img {
+    width: 100%;
+  }
+}
 
 .text-block {
   text-align: center;
   padding-right: 5%;
   padding-left: 5%;
+  padding-top: 16px;
 }
 
 
 @media only screen and (max-width: 600px) {
+  .mypc {
+    visibility: hidden;
+  }
+
+  .portability {
+    position: relative;
+    color: white;
+    width: 100%;
+    padding: 16px;
+    background-color: rgba(235, 107, 33, 0.952);
+    margin: 0px;
+    left: 0;
+  }
+
+  .row {
+    padding: 0px;
+  }
+
+  .col-sm-6 {
+    padding: 0px;
+  }
+
+  .meeting-img {
+    width: 100%;
+    padding: 0px;
+  }
+
   * {
     p {
       font-size: 14px;
     }
   }
+
   .top-container {
     padding: 0px;
   }
 
+  .mid-block {
+    background-color: rgba(0, 0, 0, 0.808);
+    color: white;
+  }
+
+  .under-mid {
+    background-color: rgb(51, 88, 209);
+    color: white;
+    img {
+      position: relative;
+      left: 0%
+    }
+
+    .under-mid-text {
+      right: 0%
+    }
+  }
+  .pocket-div {
+    text-align: center;
+  }
   .smile {
     width: 100%;
   }
-
-  .red-div {
-    height: 200px;
-    padding: 16px;
-
-    h2 {
-      font-size: 20px;
-    }
-
-    h3 {
-      font-size: 20px;
-      margin-bottom: 6px;
-    }
-
-    p {
-      font-size: 14px;
-    }
-  }
-
-  .middle-block {
-    opacity: 1;
-    padding: 6px;
-    margin-top: 5%;
-  }
-
   .text-block {
-    text-align: center;
+    text-align: left;
     padding-right: 0%;
     padding-left: 0%;
-  }
-
-  .hover-div-bottom {
-    z-index: 50;
-    background-color: rgb(207, 25, 55);
-    color: white;
     padding: 16px;
-    width: 100%;
-    text-align: center;
-    float: right;
-    height: 80px;
-
-    h3 {
-      font-size: 20px;
-    }
   }
 }
