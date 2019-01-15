@@ -29,7 +29,7 @@ export class HomePageComponent implements OnInit, AfterViewInit {
         }
       },
       {
-        threshold: 0.35
+        threshold: 0.50
       }
     );
 
@@ -43,7 +43,7 @@ export class HomePageComponent implements OnInit, AfterViewInit {
         }
       },
       {
-        threshold: 0.35
+        threshold: 0.50
       }
     );
     setTimeout(() => {
