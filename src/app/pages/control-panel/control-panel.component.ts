@@ -41,9 +41,9 @@ export class ControlPanelComponent implements OnInit {
 
 	openDownload() {
 		this.dialogRef.open(FileDownloadComponent, {
-			maxWidth: 800,
-			maxHeight: 800,
-			width: '50%'
+			maxWidth: '100%',
+			maxHeight: '100%',
+			width: '80%'
 		});
 	}
 }

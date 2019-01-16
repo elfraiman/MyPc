@@ -11,3 +11,18 @@
   height: 40px;
   width: 150px;
 }
+
+@media only screen and (max-width: 600px) {
+  .btn {
+    width: 80px;
+    height: 30px;
+    font-size: 10px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 6px;
+  }
+  .line {
+    padding: 6px;
+  }
+}
