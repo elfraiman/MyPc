@@ -1,7 +1,7 @@
 <app-navigation></app-navigation>
 
 <div class="main-content">
-
+  <h2>Welcome {{ userDoc?.name }} {{ userDoc?.lastName }}.</h2>
   <!-- Left div-->
   <div class="left-div">
     <div class="contact-div">
@@ -47,11 +47,11 @@
         <mdb-card-title>
           <h5>Cloud Space</h5>
         </mdb-card-title>
-        <mdb-card-text class="text-black">You have a package of {{(user$ | async)?.payload.data().maxCloudStorage}}MB</mdb-card-text>
+        <mdb-card-text class="text-black">You have a package of {{(user$ | async)?.payload.data()?.maxCloudStorage}}MB</mdb-card-text>
         <div style="display: block">
-          <p id="current">{{ (user$ | async)?.payload.data().currentCloudStorage.toFixed(1) }}MB</p>
-          <p id="max">{{ (user$ | async)?.payload.data().maxCloudStorage }}MB</p>
-          <round-progress [current]="(user$ | async)?.payload.data().currentCloudStorage" [max]="user?.maxCloudStorage"
+          <p id="current">{{ (user$ | async)?.payload.data()?.currentCloudStorage.toFixed(1) }}MB</p>
+          <p id="max">{{ (user$ | async)?.payload.data()?.maxCloudStorage }}MB</p>
+          <round-progress [current]="(user$ | async)?.payload.data().currentCloudStorage" [max]="userDoc?.maxCloudStorage"
             [color]="'#45ccce'" [background]="'#eaeaea'" [radius]="125" [stroke]="20" [semicircle]="true" [rounded]="true"
             [clockwise]="false" [responsive]="true" [duration]="800" [animation]="'easeInOutQuart'" [animationDelay]="1">
           </round-progress>
