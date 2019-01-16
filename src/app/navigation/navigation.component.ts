@@ -22,7 +22,6 @@ export class NavigationComponent implements OnInit {
 
   signOut() {
     this.authUser.signOut();
-    this.router.navigate(['home']);
   }
 
 
