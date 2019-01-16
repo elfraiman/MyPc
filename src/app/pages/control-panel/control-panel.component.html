@@ -42,19 +42,22 @@
   <!-- middle div -->
   <div class="middle-div">
     <mdb-card class="mb-3" bgColor="bg-secondary">
-      <mdb-card-header>Pc</mdb-card-header>
+      <mdb-card-header>Storage</mdb-card-header>
       <mdb-card-body>
         <mdb-card-title>
           <h5>Cloud Space</h5>
         </mdb-card-title>
-        <mdb-card-text class="text-black">You have a package of {{(user)?.maxCloudStorage}}MB</mdb-card-text>
+        <mdb-card-text class="text-black">You have a package of {{(user$ | async)?.payload.data().maxCloudStorage}}MB</mdb-card-text>
         <div style="display: block">
           <p id="current">{{ (user$ | async)?.payload.data().currentCloudStorage.toFixed(1) }}MB</p>
-          <p id="max">{{ user?.maxCloudStorage }}MB</p>
+          <p id="max">{{ (user$ | async)?.payload.data().maxCloudStorage }}MB</p>
           <round-progress [current]="(user$ | async)?.payload.data().currentCloudStorage" [max]="user?.maxCloudStorage"
             [color]="'#45ccce'" [background]="'#eaeaea'" [radius]="125" [stroke]="20" [semicircle]="true" [rounded]="true"
             [clockwise]="false" [responsive]="true" [duration]="800" [animation]="'easeInOutQuart'" [animationDelay]="1">
           </round-progress>
+        </div>
+        <div class="download-card-footer">
+          <button class="btn download-btn" (click)="openDownload()">Download files</button>
         </div>
       </mdb-card-body>
     </mdb-card>
