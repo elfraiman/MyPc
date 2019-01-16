@@ -31,8 +31,9 @@ import { RoundProgressModule } from 'angular-svg-round-progressbar';
 import { FirestoreService } from './firestore.service';
 import { DropZoneDirective } from './drop-zone.directive';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
-import { MatFormFieldModule, MatInputModule, MatIconModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatIconModule, MatDialogModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { FileDownloadComponent } from './components/file-download/file-download.component';
 
 const routes: Routes = [
   {
@@ -90,7 +91,8 @@ const routes: Routes = [
     ContactComponent,
     PricePageComponent,
     DropZoneDirective,
-    FileUploadComponent
+    FileUploadComponent,
+    FileDownloadComponent
   ],
   imports: [
     BrowserModule,
@@ -110,9 +112,11 @@ const routes: Routes = [
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDialogModule
   ],
   providers: [AuthService, AngularFirestore, AngularFireAuth, FirestoreService, AngularFireStorage],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [FileDownloadComponent]
 })
 export class AppModule {}

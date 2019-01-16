@@ -1,0 +1,13 @@
+.line {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 16px;
+}
+
+.btn {
+  height: 40px;
+  width: 150px;
+}

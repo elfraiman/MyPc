@@ -1,0 +1,6 @@
+<div *ngFor="let data of viewFiles" class="line">
+  <p>
+    {{ data.metaData.name }}
+  </p>
+  <button class="btn btn-primary" (click)="downloadItem(data.downloadUrl)">Download</button>
+</div>

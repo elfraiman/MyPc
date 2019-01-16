@@ -5,6 +5,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { filter, map, take } from 'rxjs/operators';
 import { isNullOrUndefined } from 'util';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { MatDialog } from '@angular/material';
+import { FileDownloadComponent } from 'src/app/components/file-download/file-download.component';
 
 interface IUser {
 	uid: string;
@@ -21,7 +23,7 @@ interface IUser {
 @Component({
 	selector: 'app-control-panel',
 	templateUrl: './control-panel.component.html',
-	styleUrls: [ './control-panel.component.css' ]
+	styleUrls: [ './control-panel.component.scss' ]
 })
 export class ControlPanelComponent implements OnInit {
 	public userEmail: string;
@@ -29,12 +31,19 @@ export class ControlPanelComponent implements OnInit {
 
 	public user;
   public user$;
-	constructor(public afAuth: AngularFireAuth, public afs: AngularFirestore) {}
+	constructor(public afAuth: AngularFireAuth, public afs: AngularFirestore, public dialogRef: MatDialog) {}
 
 	async ngOnInit() {
     this.userEmail = await this.userEmail$.pipe(take(1)).toPromise();
     this.user = await this.afs.collection('users').doc(this.userEmail).get().toPromise().then(doc => doc.data());
     this.user$ = this.afs.collection('users').doc(this.userEmail).snapshotChanges();
+	}
 
+	openDownload() {
+		this.dialogRef.open(FileDownloadComponent, {
+			maxWidth: 800,
+			maxHeight: 800,
+			width: '50%'
+		});
 	}
 }
