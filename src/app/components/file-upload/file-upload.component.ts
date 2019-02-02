@@ -61,9 +61,9 @@ export class FileUploadComponent {
 
           // Client-side validation example
           /*  if (file.type.split('/')[0] !== 'image') {
-      console.error('unsupported file type :( ');
-      return;
-    } */
+			      console.error('unsupported file type :( ');
+			      return;
+			    } */
           const date = moment(new Date()).format('MMMM Do YYYY');
           // The storage path
 					const path = `user-uploads/${userEmail}/${file.name}`;
