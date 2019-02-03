@@ -32,7 +32,6 @@ import { InstallationGuideComponent } from './pages/installation-guide/installat
 import { LoginComponent } from './pages/login/login.component';
 import { PricePageComponent } from './pages/price-page/price-page.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { PaypalExpressComponent } from './paypal-express/paypal-express.component';
 import { AuthService } from './services/auth.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
@@ -94,7 +93,6 @@ const routes: Routes = [
     DropZoneDirective,
     FileUploadComponent,
     FileDownloadComponent,
-    PaypalExpressComponent
   ],
   imports: [
     BrowserModule,
