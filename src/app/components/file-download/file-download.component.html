@@ -1,6 +1,15 @@
-<div *ngFor="let data of viewFiles" class="line">
-  <p>
-    {{ data.metaData.name }}
-  </p>
-  <button class="btn btn-primary" (click)="downloadItem(data.downloadUrl)">Download</button>
+
+<div class="spinner">
+  <mat-spinner *ngIf="loading$"></mat-spinner>
 </div>
+
+<mat-list *ngIf="!loading$">
+  <h3 mat-subheader>Files</h3>
+  <mat-list-item *ngFor="let file of viewFiles">
+    <mat-icon mat-list-icon>cloud</mat-icon>
+    <img *ngIf="file.metaData.contentType.includes('image')" src="{{file.downloadUrl}}">
+    <h4 mat-line>{{ file.metaData.name }}</h4>
+    <button class="btn btn-primary" (click)="downloadItem(file.downloadUrl)">Download</button>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>

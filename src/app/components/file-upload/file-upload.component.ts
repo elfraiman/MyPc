@@ -8,6 +8,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { ToastrService } from 'ngx-toastr';
 import * as moment from 'moment';
 import * as firebase from 'firebase';
+import { Router } from '@angular/router';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'file-upload',
@@ -38,7 +39,8 @@ export class FileUploadComponent {
     private storage: AngularFireStorage,
     private afs: AngularFirestore,
     private afAuth: AngularFireAuth,
-    private toastCtrl: ToastrService
+    private toastCtrl: ToastrService,
+    private router: Router
   ) {}
 
   toggleHover(event: boolean) {
@@ -61,9 +63,9 @@ export class FileUploadComponent {
 
           // Client-side validation example
           /*  if (file.type.split('/')[0] !== 'image') {
-      console.error('unsupported file type :( ');
-      return;
-    } */
+			      console.error('unsupported file type :( ');
+			      return;
+			    } */
           const date = moment(new Date()).format('MMMM Do YYYY');
           // The storage path
 					const path = `user-uploads/${userEmail}/${file.name}`;
@@ -108,5 +110,9 @@ export class FileUploadComponent {
   // Determines if the upload task is active
   isActive(snapshot) {
     return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes;
+  }
+
+  uploadMore() {
+    this.percentage = null;
   }
 }
