@@ -1,39 +1,40 @@
-import 'hammerjs';
-import { InstallationGuideComponent } from './pages/installation-guide/installation-guide.component';
-import { BrowserModule } from '@angular/platform-browser';
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
-import { ChartsModule } from 'angular-bootstrap-md';
-import { ToastrModule } from 'ngx-toastr';
-import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { LoginComponent } from './pages/login/login.component';
-import { SignupComponent } from './pages/signup/signup.component';
-import { BorderNavDirective } from './directives/border-nav.directive';
-import { environment } from '../environments/environment';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AuthService } from './services/auth.service';
-import { ControlPanelComponent } from './pages/control-panel/control-panel.component';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { FooterMainComponent } from './components/footer-main/footer-main.component';
-import { TooltipModule, AccordionModule, CarouselModule } from 'ngx-bootstrap';
-import { ContactComponent } from './pages/contact/contact.component';
-import { PricePageComponent } from './pages/price-page/price-page.component';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { RoundProgressModule } from 'angular-svg-round-progressbar';
-import { FirestoreService } from './firestore.service';
-import { DropZoneDirective } from './drop-zone.directive';
-import { FileUploadComponent } from './components/file-upload/file-upload.component';
-import { MatFormFieldModule, MatInputModule, MatIconModule, MatDialogModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCheckboxModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule, MatOptionModule, MatSelectModule, MatListModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, Routes } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChartsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
+import { RoundProgressModule } from 'angular-svg-round-progressbar';
+import 'hammerjs';
+import { AccordionModule, CarouselModule, TooltipModule } from 'ngx-bootstrap';
+import { ToastrModule } from 'ngx-toastr';
+import { environment } from '../environments/environment';
+import { AppComponent } from './app.component';
 import { FileDownloadComponent } from './components/file-download/file-download.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { FooterMainComponent } from './components/footer-main/footer-main.component';
+import { BorderNavDirective } from './directives/border-nav.directive';
+import { DropZoneDirective } from './drop-zone.directive';
+import { FirestoreService } from './firestore.service';
+import { NavigationComponent } from './navigation/navigation.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ControlPanelComponent } from './pages/control-panel/control-panel.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { InstallationGuideComponent } from './pages/installation-guide/installation-guide.component';
+import { LoginComponent } from './pages/login/login.component';
+import { PricePageComponent } from './pages/price-page/price-page.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { PaypalExpressComponent } from './paypal-express/paypal-express.component';
+import { AuthService } from './services/auth.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 const routes: Routes = [
   {
@@ -92,7 +93,8 @@ const routes: Routes = [
     PricePageComponent,
     DropZoneDirective,
     FileUploadComponent,
-    FileDownloadComponent
+    FileDownloadComponent,
+    PaypalExpressComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +115,12 @@ const routes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatSidenavModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCheckboxModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatListModule,
+    MatProgressSpinnerModule
   ],
   providers: [AuthService, AngularFirestore, AngularFireAuth, FirestoreService, AngularFireStorage],
   bootstrap: [AppComponent],

@@ -11,8 +11,19 @@ export const environment = {
     projectId: 'mypc-19263',
     storageBucket: 'mypc-19263.appspot.com',
     messagingSenderId: '968483788081'
+  },
+
+  paypal: {
+    env: 'sandbox',
+    client: {
+    sandbox: 'AQOZ213gUYduelmVBe4GDB5erobOgVNH14BhuJyG2iCXAocC2V85SFzPy0u3w84TU-N9hTCc29gZJ25z', // Enter your sandbox client ID here
+    secret: 'EEbldX_2Zy4GWbn2LYf7BBevI166TU8STYMM8_G8hkS-CkRM68UqVC2OXL_fON_kOGxROpm3phz9GOwd'
+  }
   }
 };
+
+
+
 
 /*
  * In development mode, to ignore zone related error stack frames such as

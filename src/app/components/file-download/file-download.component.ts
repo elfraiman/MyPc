@@ -17,8 +17,14 @@ interface IViewFile {
 export class FileDownloadComponent implements OnInit {
   public viewFiles: IViewFile[] = [];
 
-  constructor(private aFstorage: AngularFireStorage, public afAuth: AngularFireAuth, public afs: AngularFirestore) {}
+  public imageSrc: string;
+
+  public loading$ = true;
+
+  constructor(private aFstorage: AngularFireStorage, public afAuth: AngularFireAuth, public afs: AngularFirestore) {
+  }
   async ngOnInit() {
+    this.loading$ = true;
     const user = await this.afAuth.user
       .pipe(
         filter( innerUser => Boolean(innerUser) ),
@@ -36,6 +42,7 @@ export class FileDownloadComponent implements OnInit {
     const promises: Promise<IViewFile>[] = (userDoc.userFiles as any[]).map(path => this.getViewFile(path));
     try {
       this.viewFiles = await Promise.all(promises);
+      this.loading$ = false;
     } catch (e) {
       console.error('view files failed');
     }
@@ -61,7 +68,6 @@ export class FileDownloadComponent implements OnInit {
       .toPromise();
 
     viewFile.metaData = metaData;
-
     return viewFile;
   }
 
