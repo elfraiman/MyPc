@@ -74,4 +74,10 @@ export class FileDownloadComponent implements OnInit {
   public downloadItem(url) {
     window.open(url);
   }
+/*
+  public deleteItem(item)  {
+    console.log(item);
+    this.aFstorage.storage.ref();
+    // ref.child(item.metaData.url).delete();
+  }*/
 }
