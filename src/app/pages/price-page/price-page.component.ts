@@ -21,7 +21,7 @@ export class PricePageComponent implements OnInit, AfterViewInit {
     {price: 189, viewValue: '128GB'},
     {price: 203, viewValue: '240GB'},
     {price: 278, viewValue: '512GB'},
-    {value: 372, viewValue: '1024GB'}
+    {price: 372, viewValue: '1024GB'}
   ];
 
   constructor(public firestoreService: FirestoreService, public fb: FormBuilder) {

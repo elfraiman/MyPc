@@ -4,51 +4,48 @@
   <h2>Choose your MyPc</h2>
 </div>
 <div class="wrapper" #wrapper>
-  <mdb-card class="animated slideInLeft" >
-    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
-      <!-- Card img -->
-      <mdb-card-img src="../../../assets/small-3d.jpg" alt="Card image cap"></mdb-card-img>
-      <a>
-        <div class="mask"></div>
-      </a>
+  <form [formGroup]="form">
+    <mdb-card class="animated slideInLeft">
+      <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+        <!-- Card img -->
+        <video autoplay muted loop id="myVideo">
+          <source src="../../../assets/turn.mp4" type="video/mp4">
+        </video>
+        <a>
+          <div class="mask"></div>
+        </a>
+      </div>
+      <!--Card content-->
+      <mdb-card-body>
+        <!--Title-->
+        <mdb-card-title>
+          <h4>MyPc Usb computer</h4>
+          <p>USB 3.0</p>
+          <b>{{ form.get('mypc')?.value }}$</b>
+        </mdb-card-title>
+        <!--Text-->
+        <mdb-card-text>
+          <mat-form-field>
+            <mat-select placeholder="Sizes" formControlName="mypc">
+              <mat-option *ngFor="let size of myPcSizes" [value]="size.price">
+                {{size.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mdb-card-text>
+
+        <a routerLink="../contact" mdbBtn color="primary" mdbWavesEffect>Purchase</a>
+      </mdb-card-body>
+    </mdb-card>
+  </form>
+
+
+  <div class="container-fluid bottom">
+    <div class="row padding justify-content-center" style="height: 35vh; margin-top: 5%;">
+      <h2>Small slim and compact design</h2>
+      <img src="../../../assets/small-3d.jpg" />
     </div>
-    <!--Card content-->
-    <mdb-card-body>
-      <!--Title-->
-      <mdb-card-title>
-        <h4>MyPc Usb computer</h4>
-        <p>USB 3.0</p>
-      </mdb-card-title>
-      <!--Text-->
-      <mdb-card-text>
-
-      <form [formGroup]="form">
-        <mat-form-field>
-          <p>{{ form.get('mypc').value }} $</p>
-          <mat-select placeholder="Sizes">
-            <mat-option *ngFor="let size of myPcSizes" [value]="size.price" formControlName="myPcSize">
-              {{size.viewValue}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </form>
-
-      </mdb-card-text>
-
-      <a routerLink="../contact" mdbBtn color="primary" mdbWavesEffect>Purchase</a>
-    </mdb-card-body>
-  </mdb-card>
-
-
-
-<div class="container-fluid bottom">
-  <div class="row padding justify-content-center"  style="height: 35vh; margin-top: 5%;">
-    <h2 >Small slim and compact design</h2>
-    <video autoplay muted loop id="myVideo">
-        <source src="../../../assets/turn.mp4" type="video/mp4">
-      </video>
   </div>
-</div>
-<app-footer-main></app-footer-main>
-
-
+  <div class="footer">
+    <app-footer-main></app-footer-main>
+  </div>
