@@ -16,98 +16,28 @@
     <mdb-card-body>
       <!--Title-->
       <mdb-card-title>
-        <h4>MyPc 128GB</h4>
+        <h4>MyPc Usb computer</h4>
         <p>USB 3.0</p>
       </mdb-card-title>
-
       <!--Text-->
       <mdb-card-text>
-        {{ 189 | currency:'USD'}}
+
+      <form [formGroup]="form">
+        <mat-form-field>
+          <p>{{ form.get('mypc').value }} $</p>
+          <mat-select placeholder="Sizes">
+            <mat-option *ngFor="let size of myPcSizes" [value]="size.price" formControlName="myPcSize">
+              {{size.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+
       </mdb-card-text>
 
       <a routerLink="../contact" mdbBtn color="primary" mdbWavesEffect>Purchase</a>
     </mdb-card-body>
   </mdb-card>
-
-
-  <mdb-card class="animated slideInLeft">
-    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
-      <!-- Card img -->
-      <mdb-card-img src="../../../assets/small-3d.jpg" alt="Card image cap"></mdb-card-img>
-      <a>
-        <div class="mask"></div>
-      </a>
-    </div>
-    <!--Card content-->
-    <mdb-card-body>
-      <!--Title-->
-      <mdb-card-title>
-        <h4>MyPc 240GB</h4>
-        <p>USB 3.0</p>
-      </mdb-card-title>
-
-      <!--Text-->
-      <mdb-card-text>
-          {{ 203 | currency:'USD'}}
-      </mdb-card-text>
-
-      <a routerLink="../contact" mdbBtn color="primary" mdbWavesEffect>Purchase</a>
-    </mdb-card-body>
-  </mdb-card>
-
-
-  <mdb-card class="animated slideInLeft">
-    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
-      <!-- Card img -->
-      <mdb-card-img src="../../../assets/small-3d.jpg" alt="Card image cap"></mdb-card-img>
-      <a>
-        <div class="mask"></div>
-      </a>
-    </div>
-    <!--Card content-->
-    <mdb-card-body>
-      <!--Title-->
-      <mdb-card-title>
-        <h4>MyPc 512GB</h4>
-        <p>USB 3.0</p>
-      </mdb-card-title>
-
-      <!--Text-->
-      <mdb-card-text>
-        {{ 278 | currency:'USD'}}
-      </mdb-card-text>
-
-      <a routerLink="../contact" mdbBtn color="primary" mdbWavesEffect>Purchase</a>
-    </mdb-card-body>
-  </mdb-card>
-
-
-
-  <mdb-card class="animated slideInLeft">
-    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
-      <!-- Card img -->
-      <mdb-card-img src="../../../assets/small-3d.jpg" alt="Card image cap"></mdb-card-img>
-      <a>
-        <div class="mask"></div>
-      </a>
-    </div>
-    <!--Card content-->
-    <mdb-card-body>
-      <!--Title-->
-      <mdb-card-title>
-        <h4>MyPc 1024GB</h4>
-        <p>USB 3.0</p>
-      </mdb-card-title>
-
-      <!--Text-->
-      <mdb-card-text>
-          {{ 372 | currency:'USD' }}
-      </mdb-card-text>
-
-      <a routerLink="../contact" mdbBtn color="primary" mdbWavesEffect>Purchase</a>
-    </mdb-card-body>
-  </mdb-card>
-</div>
 
 
 
@@ -120,3 +50,5 @@
   </div>
 </div>
 <app-footer-main></app-footer-main>
+
+
