@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angula
 import { FirestoreService } from 'src/app/firestore.service';
 import { TweenLite } from 'gsap';
 import { MdbCardComponent } from 'angular-bootstrap-md';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-price-page',
@@ -14,7 +15,20 @@ export class PricePageComponent implements OnInit, AfterViewInit {
   @ViewChild('wrapper') wrapper: ElementRef;
   public updatePackage: Function;
 
-  constructor(public firestoreService: FirestoreService) {
+  public form: FormGroup;
+
+  public myPcSizes = [
+    {price: 189, viewValue: '128GB'},
+    {price: 203, viewValue: '240GB'},
+    {price: 278, viewValue: '512GB'},
+    {price: 372, viewValue: '1024GB'}
+  ];
+
+  constructor(public firestoreService: FirestoreService, public fb: FormBuilder) {
+    this.form = this.fb.group({
+      mypc: ['189', Validators.required]
+    });
+
   }
 
   ngOnInit() {
