@@ -81,7 +81,6 @@ export class FileDownloadComponent implements OnInit {
   public downloadItem(url) {
     window.open(url);
   }
-
   public async deleteItem(fileData) {
     const user = await this.afAuth.user
       .pipe(
