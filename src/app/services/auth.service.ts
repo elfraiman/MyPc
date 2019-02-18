@@ -66,13 +66,13 @@ export class AuthService {
         return this.afs.doc('users/' + response.user.email).set({
           email,
           uid: response.user.email,
-          userPackage: 'free',
+          userPackage: 'free', // package
           name,
           lastName,
           phone,
           address,
-          maxCloudStorage: 2000,
-          currentCloudStorage: 0
+          maxCloudStorage: 2000, // sets limit to upload
+          currentCloudStorage: 0 // current limit
         } as IUser);
       }).catch(async error => {
         this.toastCtrl.error(error);
