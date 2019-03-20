@@ -15,9 +15,18 @@ export class NavigationComponent implements OnInit {
     filter(val => !isNullOrUndefined(val)),
     map(val => val.email)
   );
-    constructor(public authUser: AuthService, private router: Router, private afAuth: AngularFireAuth) { }
+    constructor(public authUser: AuthService, private router: Router, private afAuth: AngularFireAuth) {
 
- ngOnInit() {
+     }
+
+ async ngOnInit() {
+   const user = await this.user$.pipe(take(1)).toPromise();
+
+   if (user) {
+     this.router.navigate(['control-panel']);
+   } else {
+     this.router.navigate(['login']);
+   }
   }
 
   signOut() {

@@ -1,11 +1,12 @@
-import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatCheckboxModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule, MatOptionModule, MatSelectModule, MatListModule } from '@angular/material';
+import { MatCheckboxModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule,
+   MatListModule, MatOptionModule, MatSelectModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,7 +34,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { PricePageComponent } from './pages/price-page/price-page.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AuthService } from './services/auth.service';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 const routes: Routes = [
   {
@@ -49,20 +49,8 @@ const routes: Routes = [
     component: HomePageComponent
   },
   {
-    path: 'installation',
-    component: InstallationGuideComponent
-  },
-  {
     path: 'control-panel',
     component: ControlPanelComponent
-  },
-  {
-    path: 'contact',
-    component: ContactComponent
-  },
-  {
-    path: 'pricing',
-    component: PricePageComponent
   },
   {
     path: '',

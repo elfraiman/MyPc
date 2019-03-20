@@ -1,54 +1,30 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { TweenLite } from 'gsap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit, AfterViewInit {
-  @ViewChild('middleblock') middleblock: ElementRef;
-  @ViewChild('undermid') undermid: ElementRef;
-  private observer: IntersectionObserver;
-  private undermidObserver: IntersectionObserver;
-  constructor() {
-    this.observer = null;
+export class HomePageComponent implements OnInit {
+  @ViewChild('services') servicesDiv: ElementRef;
+  @ViewChild('wrapper') wrapperDiv: ElementRef;
+
+  constructor(private router: Router) {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    TweenLite.to(this.servicesDiv.nativeElement, 2, {opacity: 1});
+    TweenLite.fromTo(this.wrapperDiv.nativeElement, 1, {width: '0%'}, {width: '100%'});
 
-  ngAfterViewInit() {
-
-    this.observer = new IntersectionObserver(
-      entries => {
-        if (entries[0].isIntersecting === true) {
-          console.log('intersect');
-          TweenLite.to(this.middleblock.nativeElement, 1, {
-              opacity: 1
-            });
-        }
-      },
-      {
-        threshold: 0.20
-      }
-    );
-
-    this.undermidObserver = new IntersectionObserver(
-      entries => {
-        if (entries[0].isIntersecting === true) {
-          console.log('intersect');
-          TweenLite.to(this.undermid.nativeElement, 1, {
-              opacity: 1
-            });
-        }
-      },
-      {
-        threshold: 0.20
-      }
-    );
     setTimeout(() => {
-      this.observer.observe(this.middleblock.nativeElement);
-      this.undermidObserver.observe(this.undermid.nativeElement);
-    }, 1000);
+
+      TweenLite.to(this.servicesDiv.nativeElement, 1, {opacity: 0});
+      TweenLite.fromTo(this.wrapperDiv.nativeElement, 1, {width: '100%'}, {width: '0%'});
+      setTimeout(() => {
+        this.router.navigate(['login']);
+      }, 1500);
+    }, 3000);
   }
 }

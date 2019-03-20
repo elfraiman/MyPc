@@ -128,7 +128,7 @@ export class AuthService {
 
   signOut() {
     this.afAuth.auth.signOut().then(() => {
-      this.router.navigate(['contact']);
+      this.router.navigate(['login']);
       this.toastCtrl.success('Succesfully signed out');
     });
   }
